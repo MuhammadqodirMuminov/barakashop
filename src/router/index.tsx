@@ -1,4 +1,5 @@
 import { Loaging } from '../UI';
+import { useBootstrap } from '../hooks';
 import { Routes } from './router';
 
 export const Router = () => {
@@ -8,5 +9,5 @@ export const Router = () => {
 		return <Loaging />;
 	}
 
-	return <Routes isAuth={true} />;
+	return <Routes isAuth={isAuth} />;
 };

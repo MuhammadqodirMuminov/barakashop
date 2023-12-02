@@ -1,6 +1,6 @@
-import { getFromLocalstorage, getTokens } from '@/helpers';
-import { addNotification } from '@/libs/utils/addNotification';
 import { useEffect, useState } from 'react';
+import { getFromLocalstorage, getTokens } from '../helpers';
+import { addNotification } from '../utils';
 import { useActions } from './useActions';
 import { useTypedSelector } from './useTypedSelector';
 
