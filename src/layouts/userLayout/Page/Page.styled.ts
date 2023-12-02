@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
-import { Wrapper } from 'styled/components';
-import { media } from 'styled/media';
+import { Wrapper } from '../../../styled/components';
+import { media } from '../../../styled/media';
 
 export { Wrapper };
 

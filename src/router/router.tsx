@@ -3,7 +3,7 @@ import { useRoutes } from 'react-router-dom';
 import { Loading } from '../UI';
 import { ROUTES } from '../constants';
 import { PageLayout, SellerLayout } from '../layouts';
-import { CaregoryPage, DetailPage, SearchResult, SellerHome } from './loadible';
+import { CaregoryPage, DetailPage, SearchResult, SellerHome, SignIn } from './loadible';
 import { ProtectedRoutes } from './protected.routes';
 import { PublicRoutes } from './public.routes';
 import { IRoutesProps } from './router.props';
@@ -59,5 +59,18 @@ export const Routes = ({ isAuth }: IRoutesProps) =>
 				},
 			],
 		},
-		{ element: <PublicRoutes isAuth={isAuth} />, children: [] },
+		{
+			element: <PublicRoutes isAuth={isAuth} />,
+			children: [
+				{
+					index: true,
+					path: ROUTES.signIn,
+					element: (
+						<Suspense fallback={<Loading />}>
+							<SignIn />
+						</Suspense>
+					),
+				},
+			],
+		},
 	]);

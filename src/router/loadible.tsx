@@ -13,3 +13,5 @@ export const DetailPage = loadable(() => import('../pages').then(({ DetailPage }
 export const SearchResult = loadable(() => import('../pages').then(({ SearchResult }) => ({ default: SearchResult })).catch(handleCatchChunkError), { fallback: <Loading /> });
 
 export const SellerHome = loadable(() => import('../pages').then(({ SellerHome }) => ({ default: SellerHome })).catch(handleCatchChunkError), { fallback: <Loading /> });
+
+export const SignIn = loadable(() => import('../pages').then(({ SignIn }) => ({ default: SignIn })).catch(handleCatchChunkError), { fallback: <Loading /> });
