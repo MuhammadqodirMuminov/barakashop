@@ -1,4 +1,4 @@
-import styled from '@emotion/styled/macro';
+import styled from 'styled-components';
 
 export const ContentStyle = styled.div`
 	width: 100%;

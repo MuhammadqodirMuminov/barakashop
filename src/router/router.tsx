@@ -63,7 +63,6 @@ export const Routes = ({ isAuth }: IRoutesProps) =>
 			element: <PublicRoutes isAuth={isAuth} />,
 			children: [
 				{
-					index: true,
 					path: ROUTES.signIn,
 					element: (
 						<Suspense fallback={<Loading />}>
