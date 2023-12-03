@@ -1,6 +1,10 @@
-import { FC, PropsWithChildren } from 'react';
-import { UiDictionary } from '../dictionary';
+import { Button, Text } from '@chakra-ui/react';
+import { ButtonProps } from './button.props';
 
-export const Button: FC<PropsWithChildren> = () => {
-	return <div>{UiDictionary.button.text}</div>;
+export const CustomButton = (props: ButtonProps) => {
+    return (
+        <Button {...props}>
+            {props.text ? <Text>{props.text}</Text> : ''}
+        </Button>
+    );
 };
