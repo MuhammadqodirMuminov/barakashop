@@ -8,7 +8,10 @@ export default defineConfig({
 	base: '/',
 	plugins: [react(), envCompatible()],
 	resolve: {
-		alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
+		alias: [
+			{ find: '@', replacement: path.resolve(__dirname, 'src') },
+			{ find: '@public', replacement: path.resolve(__dirname, 'public') }
+		],
 	},
 	optimizeDeps: {
 		force: true,
