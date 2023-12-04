@@ -1,7 +1,8 @@
 ('use client');
 
 import { PageTitle } from '@/UI';
-import { Box, Button, Checkbox, Flex, FormControl, FormLabel, Input, Stack, Text, useColorModeValue } from '@chakra-ui/react';
+import { CustomButton } from '@/UI/button/button';
+import { Box, Checkbox, Flex, FormControl, FormLabel, Input, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 
 export function SignIn() {
 	return (
@@ -23,15 +24,14 @@ export function SignIn() {
 								<Checkbox>Remember me</Checkbox>
 								<Text color={'blue.400'}>Forgot password?</Text>
 							</Stack>
-							<Button
+							<CustomButton 
+								text={'Sign in'} 
 								bg={'blue.400'}
 								color={'white'}
 								_hover={{
 									bg: 'blue.500',
 								}}
-							>
-								Sign in
-							</Button>
+							/>
 						</Stack>
 					</Stack>
 				</Box>
