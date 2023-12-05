@@ -4,20 +4,26 @@ import { ProductCardProps } from './card.props';
 import { BASE_URL } from '../../constants/site.constants';
 import noThumbnailImage from '@/assets/img/no-thumbnail.png';
 import { Box, Text } from '@chakra-ui/layout';
+<<<<<<< HEAD
 import filledStarIcon from '@/assets/icons/rating/filled.svg';
 import emptyStarIcon from '@/assets/icons/rating/empty.svg';
 import basketIcon from '@/assets/icons/shopping-cart.svg';
+=======
+import basketIcon from '@public/icons/shopping-cart.svg';
+>>>>>>> a0a529ea3c00a04cc3dceb8ccff6a93b22bcd660
 import { CustomButton } from '../button/button';
+import { ratingImageGenerate } from '../rating/rating';
 
-export const ProductCard = ({
-    id,
-    title,
-    images,
-    rating,
-    product_price,
-}: ProductCardProps): JSX.Element => {
+export const ProductCard = ({ product }: ProductCardProps): JSX.Element => {
+    const { id, title, images, rating, product_price } = product;
     const thumbImage = images?.urls[0];
     const ratingImages = ratingImageGenerate(Number(rating));
+    const customPrice = product_price
+        ? product_price
+              .toString()
+              .replace(/(\d)(?=(\d{3})+(\.(\d){0,2})*$)/g, '$1 ')
+        : product_price;
+
     return (
         <Card
             w={300}
@@ -78,7 +84,7 @@ export const ProductCard = ({
                         m={0}
                         fontSize={'30px'}
                     >
-                        {product_price}
+                        {customPrice}
                         <Text
                             fontSize={16}
                             ml={2}
@@ -103,31 +109,3 @@ export const ProductCard = ({
         </Card>
     );
 };
-
-function ratingImageGenerate(rating: number): JSX.Element {
-    let totalRating: number = 0;
-    let ratingImages: string[] = [];
-
-    while (totalRating < 5) {
-        if (totalRating < Math.round(rating)) {
-            ratingImages.push(filledStarIcon);
-            totalRating += 1;
-        } else {
-            totalRating += 1;
-            ratingImages.push(emptyStarIcon);
-        }
-    }
-
-    return (
-        <>
-            {ratingImages.map((item) => (
-                <Image
-                    mr={'2px'}
-                    key={item}
-                    src={item}
-                    alt='rating icon'
-                />
-            ))}
-        </>
-    );
-}
