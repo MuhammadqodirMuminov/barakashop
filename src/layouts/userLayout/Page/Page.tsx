@@ -1,8 +1,8 @@
 import { FC, PropsWithChildren } from 'react';
-<<<<<<< HEAD
+<<<<<<<<< Temporary merge branch 1
+=========
 import { Box } from '@chakra-ui/react';
-=======
->>>>>>> a0a529ea3c00a04cc3dceb8ccff6a93b22bcd660
+>>>>>>>>> Temporary merge branch 2
 import { Outlet } from 'react-router-dom';
 import { Footer } from '../Footer/Footer';
 import { Header } from '../Header/Header';

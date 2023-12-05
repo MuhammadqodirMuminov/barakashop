@@ -4,13 +4,13 @@ import { ProductCardProps } from './card.props';
 import { BASE_URL } from '../../constants/site.constants';
 import noThumbnailImage from '@/assets/img/no-thumbnail.png';
 import { Box, Text } from '@chakra-ui/layout';
-<<<<<<< HEAD
+<<<<<<<<< Temporary merge branch 1
+import basketIcon from '@public/icons/shopping-cart.svg';
+=========
 import filledStarIcon from '@/assets/icons/rating/filled.svg';
 import emptyStarIcon from '@/assets/icons/rating/empty.svg';
 import basketIcon from '@/assets/icons/shopping-cart.svg';
-=======
-import basketIcon from '@public/icons/shopping-cart.svg';
->>>>>>> a0a529ea3c00a04cc3dceb8ccff6a93b22bcd660
+>>>>>>>>> Temporary merge branch 2
 import { CustomButton } from '../button/button';
 import { ratingImageGenerate } from '../rating/rating';
 
