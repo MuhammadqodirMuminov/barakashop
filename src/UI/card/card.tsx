@@ -2,19 +2,14 @@ import { Card, CardBody, CardHeader } from '@chakra-ui/card';
 import { Image } from '@chakra-ui/image';
 import { ProductCardProps } from './card.props';
 import { BASE_URL } from '../../constants/site.constants';
-import noThumbnailImage from '@/assets/img/no-thumbnail.png';
+import noThumbnailImage from '@public/img/no-thumbnail.png';
 import { Box, Text } from '@chakra-ui/layout';
 import basketIcon from '@public/icons/shopping-cart.svg';
 import { CustomButton } from '../button/button';
 import { ratingImageGenerate } from '../rating/rating';
 
-export const ProductCard = ({
-    id,
-    title,
-    images,
-    rating,
-    product_price,
-}: ProductCardProps): JSX.Element => {
+export const ProductCard = ({ product }: ProductCardProps): JSX.Element => {
+    const { id, title, images, rating, product_price } = product;
     const thumbImage = images?.urls[0];
     const ratingImages = ratingImageGenerate(Number(rating));
     const customPrice = product_price
