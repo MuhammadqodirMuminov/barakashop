@@ -1,6 +1,6 @@
 import RLSkeleton, { SkeletonProps } from 'react-loading-skeleton'
 
-import * as S from './Skeleton.styled'
+import * as S from './skeleton-styled'
 import 'react-loading-skeleton/dist/skeleton.css'
 
 export const Skeleton = (props: SkeletonProps) => {

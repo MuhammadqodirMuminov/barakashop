@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AuthService } from '../../services';
 import { addNotification, errorCatch } from '../../utils';
-import { IAuthResponse, IAuthSignIn } from './auth.interface';
+import { IAuthResponse, IAuthSignIn } from './interface';
 
 export const SignIn = createAsyncThunk<IAuthResponse, IAuthSignIn>('auth/signIn', async ({ email, password, callback }, thunkApi) => {
 	try {

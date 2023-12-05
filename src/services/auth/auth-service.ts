@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
 import { $axios } from '../../config';
 import { saveStorage } from '../../helpers';
-import { IAuthResponse, IAuthSignIn } from '../../store/auth/auth.interface';
+import { IAuthResponse, IAuthSignIn } from '../../store/auth/interface';
 import { EndPointes } from '../endpoints';
 
 export const AuthService = {

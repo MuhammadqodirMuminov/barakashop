@@ -1,5 +1,5 @@
-import { Loading } from '../UI';
 import { useBootstrap } from '../hooks';
+import { Loading } from '../ui';
 import { Routes } from './router';
 
 export const Router = () => {

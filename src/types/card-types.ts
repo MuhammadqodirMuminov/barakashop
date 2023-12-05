@@ -1,5 +1,5 @@
-import { ICategory } from "./category.types";
-import { IProductImage } from "./image.types";
+import { ICategory } from "./category-types";
+import { IProductImage } from "./image-types";
 
 export interface IProductCard {
     category: ICategory;
