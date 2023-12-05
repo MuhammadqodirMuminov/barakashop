@@ -316,9 +316,7 @@ export const AllCategories = () => {
 
   return (
     <S.AllCategories open={isPopperOpen}>
-      <S.CategoriesButton open={isPopperOpen} onClick={togglePopper}>
-        Katalog
-      </S.CategoriesButton>
+      <CustomButton>Katalog</CustomButton>
 
       {/* <Popper
           open={isPopperOpen}

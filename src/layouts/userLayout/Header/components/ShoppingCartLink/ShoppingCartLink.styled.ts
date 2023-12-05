@@ -9,8 +9,8 @@ export const ShoppingCartLink = styled.a`
   margin-left: auto;
   padding-left: 25px;
   padding-right: 15px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   background: #f4f5f7;
   border-radius: 8px;
 

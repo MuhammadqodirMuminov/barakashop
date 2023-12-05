@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { SliderProps } from './slider.props';
 import { CustomButton } from '../button/button';
-import rightArrowIcon from '@public/icons/arrows/right.svg';
+import rightArrowIcon from '@/assets/icons/arrows/right.svg';
 import style from './style.module.css';
 import { Image } from '@chakra-ui/react';
 
