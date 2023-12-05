@@ -4,10 +4,9 @@ import { ProductCardProps } from './card.props';
 import { BASE_URL } from '../../constants/site.constants';
 import noThumbnailImage from '@public/img/no-thumbnail.png';
 import { Box, Text } from '@chakra-ui/layout';
-import filledStarIcon from '@public/icons/rating/filled.svg';
-import emptyStarIcon from '@public/icons/rating/empty.svg';
 import basketIcon from '@public/icons/shopping-cart.svg';
 import { CustomButton } from '../button/button';
+import { ratingImageGenerate } from '../rating/rating';
 
 export const ProductCard = ({
     id,
@@ -18,6 +17,9 @@ export const ProductCard = ({
 }: ProductCardProps): JSX.Element => {
     const thumbImage = images?.urls[0];
     const ratingImages = ratingImageGenerate(Number(rating));
+    const customPrice = product_price
+    .toString()
+    .replace(/(\d)(?=(\d{3})+(\.(\d){0,2})*$)/g, "$1 ")
     return (
         <Card
             w={300}
@@ -78,7 +80,7 @@ export const ProductCard = ({
                         m={0}
                         fontSize={'30px'}
                     >
-                        {product_price}
+                        {customPrice}
                         <Text
                             fontSize={16}
                             ml={2}
@@ -104,30 +106,3 @@ export const ProductCard = ({
     );
 };
 
-function ratingImageGenerate(rating: number): JSX.Element {
-    let totalRating: number = 0;
-    let ratingImages: string[] = [];
-
-    while (totalRating < 5) {
-        if (totalRating < Math.round(rating)) {
-            ratingImages.push(filledStarIcon);
-            totalRating += 1;
-        } else {
-            totalRating += 1;
-            ratingImages.push(emptyStarIcon);
-        }
-    }
-
-    return (
-        <>
-            {ratingImages.map((item) => (
-                <Image
-                    mr={'2px'}
-                    key={item}
-                    src={item}
-                    alt='rating icon'
-                />
-            ))}
-        </>
-    );
-}
