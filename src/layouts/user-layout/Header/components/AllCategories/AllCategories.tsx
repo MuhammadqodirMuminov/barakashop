@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState, MouseEvent } from "react";
 
-// import { Backdrop } from 'ui'
-
 import * as S from "./AllCategories.styled";
 
 import GridIcon from "@/assets/icons/grid.svg";
@@ -90,7 +88,6 @@ export const AllCategories = () => {
 
   return (
     <S.AllCategories open={isPopperOpen}>
-      {/* <CustomButton>Katalog</CustomButton> */}
 
       <CustomButton 
         text={"Katalog"}
