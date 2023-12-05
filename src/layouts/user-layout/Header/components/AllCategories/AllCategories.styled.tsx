@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 import { media } from "@/styled/media";
 
-import { CustomButton } from "@/UI/button/button";
+import { CustomButton } from "@/ui/button/button";
 
-import { ButtonProps } from "@/UI/button/button.props";
+import { ButtonProps } from "@/ui/button/button.props";
 
 const media666 = media.createMedia(666);
 const media540 = media.createMedia(540);
