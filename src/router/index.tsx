@@ -9,5 +9,5 @@ export const Router = () => {
 		return <Loading />;
 	}
 
-	return <Routes isAuth={true} />;
+	return <Routes isAuth={isAuth} />;
 };
