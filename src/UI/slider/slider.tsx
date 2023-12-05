@@ -47,6 +47,7 @@ export const Slider = (props: SliderProps) => {
             {!props.buttons ? (
                 <>
                     <CustomButton
+                        p={0}
                         className={`swiper-button-prev ${style.leftButton}`}
                         image={
                             <Image
@@ -56,6 +57,7 @@ export const Slider = (props: SliderProps) => {
                         }
                     />
                     <CustomButton
+                        p={0}
                         className={`swiper-button-next ${style.rightButton}`}
                         image={<Image src={rightArrowIcon} />}
                     />
