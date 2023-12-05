@@ -77,6 +77,7 @@ export const MenuMiddle = styled.div`
   border-top: 1px solid #e3e3e8;
   display: flex;
   /* gap: 20px; */
+  align-items: center;
   justify-content: space-around;
   border-bottom: 1px solid #e3e3e8;
 

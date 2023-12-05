@@ -23,6 +23,9 @@ export const BottomWrapper = styled(Wrapper)`
     max-width: 100%;
     margin-left: 10px;
   }
+  a{
+    margin-left: auto;
+  }
 
   ${media666} {
     ${SparePartSearch} {
@@ -36,7 +39,6 @@ export const BottomWrapper = styled(Wrapper)`
 `
 
 export const Nav = styled.nav`
-  height: 100%;
   margin-left: 20px;
   list-style: none;
 
@@ -54,6 +56,7 @@ export const Nav = styled.nav`
 export const NavItem = styled.li`
   a {
     height: 100%;
+
     padding: 14px 15px 10px;
     border-radius: 8px;
     transition: 0.3s;

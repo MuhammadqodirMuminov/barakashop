@@ -89,6 +89,7 @@ export const NavTag = styled.p`
 
 export const NavList = styled.ul`
   margin-top: 20px;
+  list-style: none;
 `
 
 export const NavItem = styled.li`
@@ -116,6 +117,7 @@ export const Consultation = styled.div`
 `
 
 export const ConsultationLink = styled.a`
+display: flex;
   width: 208px;
   padding: 15px 20px;
   background: rgba(255, 255, 255, 0.1);
