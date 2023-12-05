@@ -1,145 +1,170 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import { media } from '@/styled/media';
+import { media } from "@/styled/media";
 
-import { CustomButton } from '@/ui/button/button';
+import { CustomButton } from "@/UI/button/button";
 
-import { ButtonProps } from '@/ui/button/button.props';
+import { ButtonProps } from "@/UI/button/button.props";
 
 const media666 = media.createMedia(666);
 const media540 = media.createMedia(540);
 
 interface AllCategoriesProps {
-	open: boolean;
+  open: boolean;
 }
 
 interface CategoriesButtonProps extends ButtonProps {
-	open: boolean;
+  open: boolean;
 }
 
 export const AllCategories = styled.div<AllCategoriesProps>`
-	position: relative;
-	z-index: 100;
+  position: relative;
+  z-index: 100;
+
+  .css-pvy9rl
+  {
+    background-color: none !important;
+  }
 `;
-export const CategoriesButton = styled((props: CategoriesButtonProps) => <CustomButton {...props} />)`
-	position: relative;
-	z-index: 10;
-	height: 44px;
+export const CategoriesButton = styled((props: CategoriesButtonProps) => (
+  <CustomButton {...props} />
+))`
+  position: relative;
+  z-index: 10;
+  height: 44px;
 
-	${media666} {
-		width: 44px;
-		padding: 0;
-		flex-shrink: 0;
+  ${media666} {
+    width: 44px;
+    padding: 0;
+    flex-shrink: 0;
 
-		.button-start-icon {
-			margin-right: 0;
-			margin-left: 0;
-		}
-	}
+    .button-start-icon {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
 `;
 
 export const AllCategoriesContainer = styled.div`
-	width: 100%;
-	padding: 0 20px;
-	box-sizing: border-box;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
 
-	${media666} {
-		padding: 0 15px;
-	}
+  ${media666} {
+    padding: 0 15px;
+  }
 `;
 
 export const AllCategoriesBox = styled.div`
-	display: flex;
-	max-width: 1260px;
-	width: 100%;
-	margin: 10px auto 0;
-	padding: 20px;
-	background: #ffffff;
-	box-shadow: 0px 5px 20px rgba(33, 34, 46, 0.15);
-	border-radius: 10px;
-	box-sizing: border-box;
+  display: flex;
+  max-width: 1260px;
+  width: 100%;
+  margin: 10px auto 0;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0px 5px 20px rgba(33, 34, 46, 0.15);
+  border-radius: 10px;
+  box-sizing: border-box;
 
-	${media.tablet} {
-		padding: 10px;
-	}
+  ${media.tablet} {
+    padding: 10px;
+  }
 `;
 
 export const Categories = styled.ul`
-	display: grid;
-	grid-template-columns: repeat(3, minmax(auto, 1fr));
-	width: 100%;
-	grid-gap: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(auto, 1fr));
+  width: 100%;
+  list-style: none;
+  grid-gap: 0 20px;
 
-	${media.tablet} {
-		grid-template-columns: repeat(2, minmax(auto, 1fr));
-		grid-gap: 0 10px;
-	}
+  ${media.tablet} {
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
+    grid-gap: 0 10px;
+  }
 
-	${media540} {
-		grid-template-columns: 1fr;
-	}
+  ${media540} {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const CategoryItem = styled.li`
-	width: 100%;
-	border-radius: 10px;
-	transition: 0.3s;
-	padding: 14px 20px;
-	box-sizing: border-box;
+  width: 100%;
+  border-radius: 10px;
+  transition: 0.3s;
+  padding: 14px 20px;
+  box-sizing: border-box;
 
-	&:hover {
-		background: #f4f5f7;
+  &:hover {
+    background: #f4f5f7;
 
-		span {
-			color: var(--color-primary);
-		}
-	}
+    span {
+      color: red;
+    }
+  }
 `;
 
 export const CategoryLink = styled.a`
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 
-	span {
-		font-family: 'Stolzl';
-		font-weight: 400;
-		font-size: 14px;
-		transition: 0.3s;
-		white-space: normal;
-	}
+  span {
+    font-family: "Stolzl";
+    font-weight: 400;
+    font-size: 14px;
+    transition: 0.3s;
+    white-space: normal;
+  }
 `;
 
 export const CategoryItemIcon = styled.span`
-	width: 32px;
-	height: 32px;
-	margin-right: 15px;
+  width: 32px;
+  height: 32px;
+  margin-right: 15px;
 
-	svg {
-		width: 100%;
-		height: 100%;
-	}
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export const OilsBanner = styled.div`
-	position: relative;
-	width: 260px;
-	height: 240px;
-	flex-shrink: 0;
-	margin-left: 20px;
-	border-radius: 10px;
-	padding: 20px 30px;
-	background: #0347ab;
-	box-sizing: border-box;
+  position: relative;
+  width: 260px;
+  height: 240px;
+  flex-shrink: 0;
+  margin-left: 20px;
+  border-radius: 10px;
+  padding: 20px 30px;
+  background: #0347ab;
+  box-sizing: border-box;
 
-	p {
-		font-family: 'Stolzl';
-		font-weight: 500;
-		line-height: 22px;
-		color: #fff;
-		white-space: normal;
-	}
+  img {
+    position: absolute;
+    inset: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+    border: none;
+    margin: auto;
+    display: block;
+    width: 0px;
+    height: 0px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+  }
 
-	${media.laptop} {
-		display: none;
-	}
+  p {
+    font-family: sans-serif;
+    font-weight: 500;
+    line-height: 22px;
+    color: #fff;
+    white-space: normal;
+  }
+
+  ${media.laptop} {
+    display: none;
+  }
 `;
+
