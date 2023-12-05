@@ -1,36 +1,37 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-import { media } from '@/styled/media'
+import { media } from "@/styled/media";
 
-import { CustomButton } from '@/UI/button/button'
+import { CustomButton } from "@/UI/button/button";
 
-import { ButtonProps } from '@/UI/button/button.props'
+import { ButtonProps } from "@/UI/button/button.props";
 
-const media666 = media.createMedia(666)
-const media540 = media.createMedia(540)
+const media666 = media.createMedia(666);
+const media540 = media.createMedia(540);
 
 interface AllCategoriesProps {
-  open: boolean
+  open: boolean;
 }
 
 interface CategoriesButtonProps extends ButtonProps {
-  open: boolean
+  open: boolean;
 }
 
 export const AllCategories = styled.div<AllCategoriesProps>`
   position: relative;
   z-index: 100;
 
-
-
-
-`
-export const CategoriesButton = styled((props: CategoriesButtonProps) => <CustomButton {...props} />)`
+  .css-pvy9rl
+  {
+    background-color: none !important;
+  }
+`;
+export const CategoriesButton = styled((props: CategoriesButtonProps) => (
+  <CustomButton {...props} />
+))`
   position: relative;
   z-index: 10;
   height: 44px;
-
- 
 
   ${media666} {
     width: 44px;
@@ -41,12 +42,8 @@ export const CategoriesButton = styled((props: CategoriesButtonProps) => <Custom
       margin-right: 0;
       margin-left: 0;
     }
-
-   
   }
-
-
-`
+`;
 
 export const AllCategoriesContainer = styled.div`
   width: 100%;
@@ -56,7 +53,7 @@ export const AllCategoriesContainer = styled.div`
   ${media666} {
     padding: 0 15px;
   }
-`
+`;
 
 export const AllCategoriesBox = styled.div`
   display: flex;
@@ -72,12 +69,13 @@ export const AllCategoriesBox = styled.div`
   ${media.tablet} {
     padding: 10px;
   }
-`
+`;
 
 export const Categories = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, minmax(auto, 1fr));
   width: 100%;
+  list-style: none;
   grid-gap: 0 20px;
 
   ${media.tablet} {
@@ -88,7 +86,7 @@ export const Categories = styled.ul`
   ${media540} {
     grid-template-columns: 1fr;
   }
-`
+`;
 
 export const CategoryItem = styled.li`
   width: 100%;
@@ -101,23 +99,23 @@ export const CategoryItem = styled.li`
     background: #f4f5f7;
 
     span {
-      color: var(--color-primary);
+      color: red;
     }
   }
-`
+`;
 
 export const CategoryLink = styled.a`
   display: flex;
   align-items: center;
 
   span {
-    font-family: 'Stolzl';
+    font-family: "Stolzl";
     font-weight: 400;
     font-size: 14px;
     transition: 0.3s;
     white-space: normal;
   }
-`
+`;
 
 export const CategoryItemIcon = styled.span`
   width: 32px;
@@ -128,7 +126,7 @@ export const CategoryItemIcon = styled.span`
     width: 100%;
     height: 100%;
   }
-`
+`;
 
 export const OilsBanner = styled.div`
   position: relative;
@@ -141,8 +139,24 @@ export const OilsBanner = styled.div`
   background: #0347ab;
   box-sizing: border-box;
 
+  img {
+    position: absolute;
+    inset: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+    border: none;
+    margin: auto;
+    display: block;
+    width: 0px;
+    height: 0px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+  }
+
   p {
-    font-family: 'Stolzl';
+    font-family: sans-serif;
     font-weight: 500;
     line-height: 22px;
     color: #fff;
@@ -152,4 +166,5 @@ export const OilsBanner = styled.div`
   ${media.laptop} {
     display: none;
   }
-`
+`;
+
