@@ -1,5 +1,6 @@
 import { Router } from '@/router';
-import { store } from '@/store';
+import { store } from '@/store/store';
+import { GlobalStyles } from '@/styles';
 import { ChakraProvider } from '@chakra-ui/react';
 import { Toaster } from 'react-hot-toast';
 import { Provider } from 'react-redux';
@@ -11,6 +12,7 @@ export function App() {
 		<ChakraProvider>
 			<HistoryRouter history={history}>
 				<Provider store={store}>
+					<GlobalStyles />
 					<Router />
 					<Toaster />
 				</Provider>
