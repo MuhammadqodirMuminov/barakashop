@@ -1,6 +1,6 @@
 ('use client');
-import { InputField, PageTitle } from '@/UI';
-import { CustomButton } from '@/UI/button/button';
+import { InputField, PageTitle } from '@/ui';
+import { CustomButton } from '@/ui/button/button';
 import { AtSignIcon, PhoneIcon } from '@chakra-ui/icons';
 import { Box, Flex, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, useColorModeValue } from '@chakra-ui/react';
 
