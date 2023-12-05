@@ -1,5 +1,5 @@
 import { Button, Text } from '@chakra-ui/react';
-import { ButtonProps } from './button.props';
+import { ButtonProps } from './button-props';
 
 export const CustomButton = (props: ButtonProps) => {
     return (

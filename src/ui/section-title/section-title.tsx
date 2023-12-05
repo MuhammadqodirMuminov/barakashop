@@ -1,8 +1,8 @@
 import { CustomButton, CustomText } from '@/ui';
 import { Box, Image } from '@chakra-ui/react';
-import rightArrowIcon from '@public/icons/arrows/right.svg';
+import rightArrowIcon from '@/assets/icons/arrows/blue-arrow.svg';
 import { Link } from 'react-router-dom';
-import { SectionTitleProps } from './section-title.props';
+import { SectionTitleProps } from './section-title-props';
 
 export const SectionTitle = ({ title, link, link_title }: SectionTitleProps) => {
 	return (
