@@ -2,11 +2,11 @@ import { Card, CardBody, CardHeader } from '@chakra-ui/card';
 import { Image } from '@chakra-ui/image';
 import { ProductCardProps } from './card.props';
 import { BASE_URL } from '../../constants/site.constants';
-import noThumbnailImage from '@public/img/no-thumbnail.png';
+import noThumbnailImage from '@/assets/img/no-thumbnail.png';
 import { Box, Text } from '@chakra-ui/layout';
-import filledStarIcon from '@public/icons/rating/filled.svg';
-import emptyStarIcon from '@public/icons/rating/empty.svg';
-import basketIcon from '@public/icons/shopping-cart.svg';
+import filledStarIcon from '@/assets/icons/rating/filled.svg';
+import emptyStarIcon from '@/assets/icons/rating/empty.svg';
+import basketIcon from '@/assets/icons/shopping-cart.svg';
 import { CustomButton } from '../button/button';
 
 export const ProductCard = ({
