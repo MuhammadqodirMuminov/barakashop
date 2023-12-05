@@ -2,7 +2,7 @@ import { Card, CardBody, CardHeader } from '@chakra-ui/card';
 import { Image } from '@chakra-ui/image';
 import { ProductCardProps } from './card.props';
 import { BASE_URL } from '../../constants/site.constants';
-import noThumbnailImage from '@public/img/no-thumbnail.png';
+import noThumbnailImage from '@/assets/img/no-thumbnail.png';
 import { Box, Text } from '@chakra-ui/layout';
 import basketIcon from '@public/icons/shopping-cart.svg';
 import { CustomButton } from '../button/button';
@@ -18,8 +18,11 @@ export const ProductCard = ({
     const thumbImage = images?.urls[0];
     const ratingImages = ratingImageGenerate(Number(rating));
     const customPrice = product_price
-    .toString()
-    .replace(/(\d)(?=(\d{3})+(\.(\d){0,2})*$)/g, "$1 ")
+        ? product_price
+              .toString()
+              .replace(/(\d)(?=(\d{3})+(\.(\d){0,2})*$)/g, '$1 ')
+        : product_price;
+
     return (
         <Card
             w={300}
@@ -105,4 +108,3 @@ export const ProductCard = ({
         </Card>
     );
 };
-
