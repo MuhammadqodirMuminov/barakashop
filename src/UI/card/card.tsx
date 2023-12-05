@@ -1,14 +1,23 @@
+<<<<<<< HEAD
+=======
+import basketIcon from '@/assets/icons/shopping-cart.svg';
+>>>>>>> 383bd79cfccc3e7d359520df002bf3fc4c06bdbc
 import noThumbnailImage from '@/assets/img/no-thumbnail.png';
 import { Card, CardBody, CardHeader } from '@chakra-ui/card';
 import { Image } from '@chakra-ui/image';
 import { Box, Text } from '@chakra-ui/layout';
+<<<<<<< HEAD
 import { BASE_URL } from '../../constants/site.constants';
 import { ProductCardProps } from './card.props';
 
 import basketIcon from '@/assets/icons/shopping-cart.svg';
 
+=======
+import { BASE_URL } from '../../constants/site-constants';
+>>>>>>> 383bd79cfccc3e7d359520df002bf3fc4c06bdbc
 import { CustomButton } from '../button/button';
 import { ratingImageGenerate } from '../rating/rating';
+import { ProductCardProps } from './card.props';
 
 export const ProductCard = ({ product }: ProductCardProps): JSX.Element => {
 	const { id, title, images, rating, product_price } = product;
@@ -17,7 +26,11 @@ export const ProductCard = ({ product }: ProductCardProps): JSX.Element => {
 	const customPrice = product_price ? product_price.toString().replace(/(\d)(?=(\d{3})+(\.(\d){0,2})*$)/g, '$1 ') : product_price;
 
 	return (
+<<<<<<< HEAD
 		<Card w={300}>
+=======
+		<Card w={300} _activeLink={`/product/${id}`}>
+>>>>>>> 383bd79cfccc3e7d359520df002bf3fc4c06bdbc
 			<CardHeader p={0}>
 				<Image h={252} src={thumbImage ? `${BASE_URL}/${thumbImage}` : noThumbnailImage} objectFit={'cover'} />
 			</CardHeader>

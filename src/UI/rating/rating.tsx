@@ -1,5 +1,5 @@
-import emptyStarIcon from '@/assets/icons/rating/empty.svg';
 import filledStarIcon from '@/assets/icons/rating/filled.svg';
+import emptyStarIcon from '@/assets/icons/rating/empty.svg';
 import { Image } from '@chakra-ui/react';
 
 export function ratingImageGenerate(rating: number): JSX.Element {

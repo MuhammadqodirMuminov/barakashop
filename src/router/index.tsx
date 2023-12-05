@@ -1,5 +1,5 @@
-import { Loading } from '../UI';
 import { useBootstrap } from '../hooks';
+import { Loading } from '../ui';
 import { Routes } from './router';
 
 export const Router = () => {
@@ -9,5 +9,5 @@ export const Router = () => {
 		return <Loading />;
 	}
 
-	return <Routes isAuth={isAuth} />;
+	return <Routes isAuth={true} />;
 };

@@ -1,2 +1,2 @@
-export * from './sellerLayout/index';
-export * from './userLayout/index';
+export * from './seller-layout/index';
+export * from './user-layout/index';
