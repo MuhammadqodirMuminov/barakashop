@@ -11,6 +11,7 @@ export { Wrapper }
 export const Footer = styled.footer`
   color: #fff;
   background: #2f2b4a;
+ 
 `
 
 export const Top = styled.div`
