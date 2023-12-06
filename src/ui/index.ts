@@ -1,8 +1,9 @@
 export { CustomButton } from './button/button';
-export { ProductCard } from './card/card';
+export { ProductCard } from './card/product-card';
 export { InputField } from './input/input';
 export { Loading } from './loading';
 export { PageTitle } from './page-title/page-title';
 export { SectionTitle } from './section-title/section-title';
 export { Slider } from './slider/slider';
 export { CustomText } from './text/text';
+export { CategoryCard } from './card/category-card'
