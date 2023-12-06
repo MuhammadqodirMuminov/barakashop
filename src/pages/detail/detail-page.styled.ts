@@ -23,6 +23,7 @@ export const Img = styled.img`
 export const SingleImageBox = styled.div`
   width: 100%;
   max-width: 500px;
+  height: 600px;
 `;
 
 export const SingleContentWrap = styled.div`

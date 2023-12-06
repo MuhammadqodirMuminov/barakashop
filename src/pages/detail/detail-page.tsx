@@ -17,12 +17,73 @@ import {
   Wrapper,
 } from "./detail-page.styled";
 import DetailImg from "@/assets/img/uzum.jpg";
+import './detail.swiper.css'
+import React, { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+
+
 export const DetailPage = () => {
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
   return (
     <Wrapper>
       <SingleWrapper>
         <SingleImageBox>
-          <Img src={DetailImg} />
+        <Swiper
+        style={{
+          '--swiper-navigation-color': '#fff',
+          '--swiper-pagination-color': '#fff',
+        }}
+        spaceBetween={10}
+        navigation={true}
+        thumbs={{ swiper: thumbsSwiper }}
+        modules={[FreeMode, Navigation, Thumbs]}
+        className="mySwiper2"
+      >
+        <SwiperSlide>
+          <img src={DetailImg} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+        </SwiperSlide>
+     
+      </Swiper>
+      <Swiper
+        onSwiper={setThumbsSwiper}
+        spaceBetween={10}
+        slidesPerView={4}
+        freeMode={true}
+        watchSlidesProgress={true}
+        modules={[FreeMode, Navigation, Thumbs]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <img src={DetailImg} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+        </SwiperSlide>
+   
+      </Swiper>
         </SingleImageBox>
         <SingleContentWrap>
           <SingleBox>
@@ -86,26 +147,7 @@ export const DetailPage = () => {
         mikrofon va naushnik uyasi O'rnatilgan mikrofon yoki eshitish vositasini
         3,5 mm raz'em orqali ulab do'stlaringiz bilan3 suhbatlashing. Maxsus
         ovozni o'chirish tugmasi yordamida mikrofoningizni osongina o'chiring.
-        DualSense simsiz boshqaruvchisi DUALSHOCK®4-dan ko'plab xususiyatlarni
-        meros qilib oladi va ularga keyingi avlod o'yinlari uchun yangi hayot
-        baxsh etadi. O'rnatilgan batareya Endi USB Type-C®4 ​​bilan quvvatlang
-        va o‘ynang. O'rnatilgan dinamik Ba'zi o'yinlar boshqaruvchining
-        qo'shimcha funksiyalaridan foydalanadi va yuqori aniqlikdagi ovoz
-        effektlari bilan boshqa tajriba darajasini qo'shadi. Siqilish sensori
-        O'rnatilgan akselerometr va giroskop qo'llab-quvvatlanadigan o'yinlar
-        uchun intuitiv harakat nazoratini ta'minlaydi. Turi: geympad Ulanish
-        turi: simsiz Moslik: Android, PS5, iOS, kompyuter Mos qurilmalar
-        ro'yxati: Sony Playstation 5 O'rnatilgan sensorlar: akselerometr,
-        giroskop, harakat detektori XInput/DirectInput-ni qo'llab-quvvatlash:
-        DirectInput Vibratsiyali teskari aloqa va fikr-mulohazalar: tebranish
-        haqida fikr-mulohaza Mini joystiklar soni: 2 Tugmalar soni: 16
-        Trackpadlar soni: 1 Simsiz aloqa diapazoni: 10 m Quvvat manbai: o'z
-        batareyasi Ish vaqti: 10 soat Bizning → do'konimizdagi barcha
-        mahsulotlarni ko'rib chiqing! Sizga albatta biror narsa yoqadi! Buyurtma
-        olingan kundan boshlab 14 kun kafolat Agar sizda mahsulot haqida
-        savollaringiz bo'lsa yoki u mos kelmasa yoki sifat haqida shikoyatlar
-        bo'lsa, biz bilan har doim chat orqali bog'lanishingiz mumkin va biz har
-        qanday vaziyatdan chiqish yo'lini topamiz!
+       
       </DetailMoreDesc>
       </DetailMoreWrap>
     </Wrapper>
