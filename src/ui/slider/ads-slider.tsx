@@ -1,16 +1,16 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { SliderProps } from './slider-props';
+import { AdsSliderProps } from './ads-slider-props';
 import { CustomButton } from '../button/button';
 import rightArrowIcon from '@/assets/icons/arrows/right.svg';
-import style from './style.module.css';
+import style from './ads.module.css';
 import { Box, Image } from '@chakra-ui/react';
 import { CustomText } from '../text/text';
 import thumbImage from '@/assets/img/ads-thumb.png';
 import placeholderImage from '@/assets/img/placeholders/product.png';
 import { Navigation } from 'swiper/modules';
 
-export const Slider = (props: SliderProps) => {
+export const AdsSlider = (props: AdsSliderProps) => {
     return (
         <Swiper
             {...props}
