@@ -18,12 +18,7 @@ import { Link } from "react-router-dom";
 import { Text, useDisclosure } from "@chakra-ui/react";
 
 import { CustomButton } from "@/ui/button/button";
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalBody,
-} from "@chakra-ui/react";
+import { Modal, ModalOverlay, ModalContent, ModalBody } from "@chakra-ui/react";
 
 export const AllCategories = () => {
   const [popperAnchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -88,16 +83,34 @@ export const AllCategories = () => {
 
   return (
     <S.AllCategories open={isPopperOpen}>
-
-      <CustomButton 
+      <CustomButton
+        display={"flex"}
+        alignItems={"center"}
+        justifyContent={"center"}
+        gap={"5px"}
+        flexDirection={"row-reverse"}
+        bgColor={"#023581"}
+        color={"#fff"}
         text={"Katalog"}
-        image={<><img src={GridIcon} alt="" /></>}
+        
+        _hover={{backgroundColor:"023581"}}
+        _active={{backgroundColor:"023581"}}
+        image={
+          <>
+            <img src={GridIcon} alt="" />
+          </>
+        }
         onClick={onOpen}
       />
 
       <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay  />
-        <ModalContent bg={'none'} marginTop={"110px"} width={"100%"} maxW={"1260px"}>
+        <ModalOverlay />
+        <ModalContent
+          bg={"none"}
+          marginTop={"110px"}
+          width={"100%"}
+          maxW={"1260px"}
+        >
           <ModalBody>
             {" "}
             <S.AllCategoriesContainer>
@@ -115,7 +128,6 @@ export const AllCategories = () => {
           </ModalBody>
         </ModalContent>
       </Modal>
-      
     </S.AllCategories>
   );
 };
