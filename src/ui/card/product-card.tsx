@@ -3,7 +3,7 @@ import noThumbnailImage from '@/assets/img/no-thumbnail.png';
 import { Card, CardBody, CardHeader } from '@chakra-ui/card';
 import { Image } from '@chakra-ui/image';
 import { Box, Text } from '@chakra-ui/layout';
-import { ProductCardProps } from './card-props';
+import { ProductCardProps } from './product-card-props';
 import { BASE_URL } from '../../constants/site-constants';
 import { CustomButton } from '../button/button';
 import { ratingImageGenerate } from '../rating/rating';
