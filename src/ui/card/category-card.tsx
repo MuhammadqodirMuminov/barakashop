@@ -30,7 +30,7 @@ export const CategoryCard = ({ category }: ICategoryCardProps) => {
                     {title}
                 </CustomText>
                 <CustomText>
-                    <Link to={`/product/${id}`}>
+                    <Link to={`/category/${id}`}>
                         <CustomButton
                             mt={8}
                             bgColor={'#023581'}
