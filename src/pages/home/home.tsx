@@ -1,4 +1,4 @@
-import { AdsSlider, CategorySlider } from '@/ui';
+import { AdsSlider, CategorySlider, ProductSlider } from '@/components';
 
 export const Home = () => {
 	return (

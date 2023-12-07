@@ -5,8 +5,7 @@ import { Box, Image } from '@chakra-ui/react';
 import 'swiper/css';
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { CustomText } from '..';
-import { CustomButton } from '../button/button';
+import { CustomButton, CustomText } from '../../../ui';
 import { AdsSliderProps } from './ads-slider-props';
 import style from './ads.module.css';
 
