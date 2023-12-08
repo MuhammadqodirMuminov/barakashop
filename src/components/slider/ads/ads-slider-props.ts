@@ -1,6 +1,6 @@
 import { SwiperProps } from "swiper/react";
 
-export interface SliderProps extends SwiperProps {
+export interface AdsSliderProps extends SwiperProps {
     items: IAdsItem[]
     buttons?: boolean;
 }
