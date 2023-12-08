@@ -1,5 +1,6 @@
 import { Text } from "@chakra-ui/react";
 import {
+  CountWrap,
   DetailMoreDesc,
   DetailMoreWrap,
   DetailText,
@@ -27,6 +28,8 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import HookForm from "@/ui/form/form";
+import { Counter } from "@/ui/counter/counter";
 
 
 export const DetailPage = () => {
@@ -114,15 +117,19 @@ export const DetailPage = () => {
             <div>
               <SingleCount>
                 <h3>Miqdori:</h3>
-                <div>
+                <CountWrap>
+                  <Counter/>
                   <SingleProductCount>Sotuvda 10 dona bor</SingleProductCount>
-                </div>
+                </CountWrap>
               </SingleCount>
 
               <SingleCount>
                 <h3>Narxi:</h3>
                 <SingleProductPrice> 20 000 000 so'm</SingleProductPrice>
               </SingleCount>
+            <SingleContentLine></SingleContentLine>
+
+              <HookForm/>
             </div>
           </SingleBox>
         </SingleContentWrap>
