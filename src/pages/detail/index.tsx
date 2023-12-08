@@ -1,6 +1,4 @@
-import DetailImg from '@/assets/img/uzum.jpg';
-import { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { products } from '@/constants';
 import {
 	CountWrap,
 	DetailMoreDesc,
@@ -17,89 +15,47 @@ import {
 	SingleTitle,
 	SingleWrapper,
 	Wrapper,
-} from './detail-page.styled';
-import './detail.swiper.css';
+} from './styled';
 
-// Import Swiper styles
+import { DetailSlider, ProductSlider } from '@/components';
 import { Counter } from '@/ui/counter/counter';
 import HookForm from '@/ui/form/form';
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import { Flex } from '@chakra-ui/react';
 
 export const DetailPage = () => {
-	const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
 	return (
 		<Wrapper>
 			<SingleWrapper>
 				<SingleImageBox>
-					<Swiper
-						style={{
-							'--swiper-navigation-color': '#fff',
-							'--swiper-pagination-color': '#fff',
-						}}
-						spaceBetween={10}
-						navigation={true}
-						thumbs={{ swiper: thumbsSwiper }}
-						modules={[FreeMode, Navigation, Thumbs]}
-						className='mySwiper2'
-					>
-						<SwiperSlide>
-							<img src={DetailImg} />
-						</SwiperSlide>
-						<SwiperSlide>
-							<img src='https://swiperjs.com/demos/images/nature-2.jpg' />
-						</SwiperSlide>
-						<SwiperSlide>
-							<img src='https://swiperjs.com/demos/images/nature-3.jpg' />
-						</SwiperSlide>
-						<SwiperSlide>
-							<img src='https://swiperjs.com/demos/images/nature-4.jpg' />
-						</SwiperSlide>
-					</Swiper>
-					<Swiper onSwiper={setThumbsSwiper} spaceBetween={10} slidesPerView={4} freeMode={true} watchSlidesProgress={true} modules={[FreeMode, Navigation, Thumbs]} className='mySwiper'>
-						<SwiperSlide>
-							<img src={DetailImg} />
-						</SwiperSlide>
-						<SwiperSlide>
-							<img src='https://swiperjs.com/demos/images/nature-2.jpg' />
-						</SwiperSlide>
-						<SwiperSlide>
-							<img src='https://swiperjs.com/demos/images/nature-3.jpg' />
-						</SwiperSlide>
-						<SwiperSlide>
-							<img src='https://swiperjs.com/demos/images/nature-4.jpg' />
-						</SwiperSlide>
-					</Swiper>
+					<DetailSlider />
 				</SingleImageBox>
+
 				<SingleContentWrap>
 					<SingleBox>
 						<SingleRating>
-							{' '}
 							<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='yellow' strokeWidth='3' strokeLinecap='round' strokeLinejoin='round'>
 								<polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'></polygon>
-							</svg>{' '}
+							</svg>
 							<span>10.0 </span>
 						</SingleRating>
 						<SingleTitle> Smartfon Xiaomi Redmi 13C, 4GB+128GB I 8GB+256GB, 6.74" 90Hz, 5000mAh, Dual SIM, 4G LTE</SingleTitle>
 
-						<SingleContentLine></SingleContentLine>
+						<SingleContentLine />
 						<div>
-							<SingleCount>
-								<h3>Miqdori:</h3>
-								<CountWrap>
-									<Counter />
-									<SingleProductCount>Sotuvda 10 dona bor</SingleProductCount>
-								</CountWrap>
-							</SingleCount>
+							<Flex justify={'space-between'}>
+								<SingleCount>
+									<h3>Miqdori:</h3>
+									<CountWrap>
+										<Counter />
+										<SingleProductCount>Sotuvda 10 dona bor</SingleProductCount>
+									</CountWrap>
+								</SingleCount>
 
-							<SingleCount>
-								<h3>Narxi:</h3>
-								<SingleProductPrice> 20 000 000 so'm</SingleProductPrice>
-							</SingleCount>
+								<SingleCount>
+									<h3>Narxi:</h3>
+									<SingleProductPrice> 20 000 000 so'm</SingleProductPrice>
+								</SingleCount>
+							</Flex>
 							<SingleContentLine></SingleContentLine>
 
 							<HookForm />
@@ -107,7 +63,9 @@ export const DetailPage = () => {
 					</SingleBox>
 				</SingleContentWrap>
 			</SingleWrapper>
-			<SingleContentLine></SingleContentLine>
+
+			<SingleContentLine />
+
 			<DetailText>Mahsulot tavsifi</DetailText>
 			<DetailMoreWrap>
 				<DetailMoreDesc>
@@ -119,6 +77,8 @@ export const DetailPage = () => {
 					3,5 mm raz'em orqali ulab do'stlaringiz bilan3 suhbatlashing. Maxsus ovozni o'chirish tugmasi yordamida mikrofoningizni osongina o'chiring.
 				</DetailMoreDesc>
 			</DetailMoreWrap>
+
+			<ProductSlider items={products} title={'Same products'} />
 		</Wrapper>
 	);
 };

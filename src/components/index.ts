@@ -12,3 +12,4 @@ export { ProductSlider } from './slider/product';
 export { SparePartSearch } from './spare-part-search';
 export { HeaderTop } from './top';
 export { UserEntry } from './user-entry';
+export {DetailSlider} from "./slider/detail"

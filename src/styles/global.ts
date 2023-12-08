@@ -17,7 +17,17 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     font-family: Inter, sans-serif;
     font-weight: 400;
+    
   }
+
+  .swiper-button-next {
+    display: none;
+  }
+  
+  .swiper-button-prev {
+    display: none;
+  }
+  
 
   html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, img, ul, li, ol, a {
     margin: 0;

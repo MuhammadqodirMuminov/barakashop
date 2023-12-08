@@ -19,12 +19,14 @@ import logoMobile from '@/assets/img/logo/logo-mobile.png';
 import logo from '@/assets/img/logo/logo.png';
 import productImg from '@/assets/img/main-slider/product.png';
 import CategoryThumb from '@/assets/img/placeholders/product.png';
+import DetailImg from '@/assets/img/uzum.jpg';
 
 export {
 	ArrowRightIcon,
 	CanisterIcon,
 	CarGarageIcon,
 	CategoryThumb,
+	DetailImg,
 	EngineIcon,
 	FrontDoorIcon,
 	GlassWasherIcon,
