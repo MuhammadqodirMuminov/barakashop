@@ -1,3 +1,4 @@
+import { ProductCard } from '@/ui';
 
 export { CustomButton } from './button/button';
 export { CategoryCard } from './card/category-card';
