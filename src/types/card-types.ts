@@ -20,5 +20,5 @@ export interface IProductCard {
     title: string;
     totalPrice: null;
     images: IProductImage
-    updated_at: string;
+    updated_at?: string;
 }
