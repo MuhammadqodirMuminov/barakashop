@@ -28,7 +28,7 @@ export const SingleImageBox = styled.div`
 
 export const SingleContentWrap = styled.div`
   width: 100%;
-  max-width: 700px;
+  max-width: 600px;
 `;
 
 export const SingleContentLine = styled.span`
@@ -53,39 +53,45 @@ export const SingleTitle = styled.h3`
   word-break: break-word;
 `;
 export const SingleCount = styled.div`
-  margin-bottom: 20px;
-`;
+margin-top: 30px;`;
 
 export const SingleProductCount = styled.h3`
   color: blue;
+  font-size: 14px;
 `;
 
 export const SingleProductPrice = styled.h3`
   font-weight: bold;
+  margin-top: 5px;
 `;
-export const DetailText = styled.p `
-margin: 0;
-font-weight: bold;
-font-size: 18px;
-margin-bottom: 20px;
-color: #023581;
-`
+export const DetailText = styled.p`
+  margin: 0;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #023581;
+`;
 
+export const DetailMoreWrap = styled.div`
+  width: 100%;
 
-export const DetailMoreWrap = styled.div `
-width: 100%;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid hsla(0, 0%, 92%, 0.539);
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+`;
 
-display: block;
-margin: 0 auto;
-border: 1px solid hsla(0,0%,92%,.539);
-padding: 30px;
-margin-bottom: 30px;
-border-radius: 10px;
+export const DetailMoreDesc = styled.p`
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.5;
+`;
 
-`
-
-export const DetailMoreDesc = styled.p `
-margin: 0;
-font-weight: 500;
-line-height: 1.5;
-`
+export const CountWrap = styled.div`
+  display: flex;
+  margin-top: 10px;
+  gap: 20px;
+  align-items: center;
+`;
