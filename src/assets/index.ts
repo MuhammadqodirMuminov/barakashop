@@ -6,6 +6,8 @@ import GlassWasherIcon from '@/assets/icons/glass-washer.svg';
 import GridIcon from '@/assets/icons/grid.svg';
 import LocationIcon from '@/assets/icons/location.svg';
 import LoupeIcon from '@/assets/icons/loupe.svg';
+import MasterCardIcon from '@/assets/icons/payments/mastercard.svg';
+import VisaIcon from '@/assets/icons/payments/visa.svg';
 import PhoneIcon from '@/assets/icons/phone.svg';
 import SafetyBeltIcon from '@/assets/icons/safety-belt.svg';
 import ShoppingCartIcon from '@/assets/icons/shopping-cart.svg';
@@ -23,10 +25,12 @@ export {
 	GridIcon,
 	LocationIcon,
 	LoupeIcon,
+	MasterCardIcon,
 	PhoneIcon,
 	SafetyBeltIcon,
 	ShoppingCartIcon,
 	UserIcon,
+	VisaIcon,
 	logo,
 	logoMobile,
 	oilsBannerImg,
