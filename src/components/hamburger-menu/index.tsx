@@ -12,7 +12,6 @@ interface HamburgerMenuProps {
 }
 
 export const HamburgerMenu = ({ nav }: HamburgerMenuProps) => {
-	
 	const navItems = nav.map(({ label, link }) => {
 		return (
 			<li key={link}>
@@ -27,7 +26,7 @@ export const HamburgerMenu = ({ nav }: HamburgerMenuProps) => {
 
 	return (
 		<S.HamburgerMenu>
-			<S.HamburgerButton onClick={onOpen} active>
+			<S.HamburgerButton onClick={onOpen}>
 				<span />
 				<span />
 				<span />

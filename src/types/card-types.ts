@@ -7,6 +7,7 @@ export interface IProductCard {
     description: string;
     rating: string;
     product_price: string;
+    name?: string,
     category?: ICategory;
     images: IProductImage
     count?: number;

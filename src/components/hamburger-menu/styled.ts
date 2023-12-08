@@ -7,9 +7,9 @@ import { UserEntry } from '../user-entry/styled';
 
 const media666 = media.createMedia(666);
 
-interface HamburgerButtonProps {
-	active: boolean;
-}
+// interface HamburgerButtonProps {
+// 	active: boolean;
+// }
 
 export const HamburgerMenu = styled.div`
 	display: none;
@@ -20,7 +20,7 @@ export const HamburgerMenu = styled.div`
 	}
 `;
 
-export const HamburgerButton = styled.button<HamburgerButtonProps>`
+export const HamburgerButton = styled.button`
 	position: relative;
 	z-index: 1300;
 	display: flex;
