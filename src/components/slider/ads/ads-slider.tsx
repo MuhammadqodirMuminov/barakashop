@@ -5,14 +5,14 @@ import { Box, Image } from '@chakra-ui/react';
 import 'swiper/css';
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { CustomButton, CustomText } from '../../../ui';
+import { CustomButton, CustomText } from '@/ui';
 import { AdsSliderProps } from './ads-slider-props';
 import style from './ads.module.css';
 
 export const AdsSlider = (props: AdsSliderProps) => {
     return (
         <Swiper
-            {...props}
+			{...props}
             className={style.swiper}
             navigation={{
                 nextEl: '.swiper-button-next',
@@ -45,6 +45,7 @@ export const AdsSlider = (props: AdsSliderProps) => {
             {/* Navigation buttons (previous & next) */}
 
             <CustomButton
+                _after={{ display: 'none' }}
                 p={0}
                 className={`swiper-button-prev ${style.leftButton}`}
                 image={
@@ -55,6 +56,7 @@ export const AdsSlider = (props: AdsSliderProps) => {
                 }
             />
             <CustomButton
+                _after={{ display: 'none' }}
                 p={0}
                 className={`swiper-button-next ${style.rightButton}`}
                 image={<Image src={rightArrowIcon} />}
