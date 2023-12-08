@@ -3,8 +3,8 @@ import { IProductCard } from './card-types';
 export interface ICategory {
 	id: number;
 	title: string;
-	description: string;
-	categoty_image?: string;
+	categoty_image: string;
+	description?: string;
 	recommendation?: null;
 	sort_order?: null;
 	is_active?: boolean;

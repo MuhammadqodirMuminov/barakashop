@@ -6,14 +6,17 @@ import { ProductSliderProps } from './product-slider-props';
 import { Image } from '@chakra-ui/react';
 import rightArrowIcon from '@/assets/icons/arrows/right.svg';
 import { Navigation } from 'swiper/modules';
+import { FirstSlider } from './first-slider';
 
 export const ProductSlider = (props: ProductSliderProps) => {
     return (
         <Swiper
-            style={{ position: 'relative' }}
+            style={{
+                position: 'relative',
+            }}
             watchOverflow={true}
             slidesPerView={'auto'}
-            spaceBetween={10}
+            spaceBetween={20}
             breakpoints={{
                 1200: {
                     slidesPerView: 4,
@@ -34,12 +37,23 @@ export const ProductSlider = (props: ProductSliderProps) => {
             }}
             modules={[Navigation]}
         >
+            {/* slider category */}
+            {props.category ? (
+                <SwiperSlide>
+                    <FirstSlider category={props.category} />
+                </SwiperSlide>
+            ) : (
+                ''
+            )}
+
+            {/* slider products */}
             {props.items.map((item) => (
                 <SwiperSlide key={item.id}>
                     <ProductCard product={item} />
                 </SwiperSlide>
             ))}
             <CustomButton
+                _after={{ display: 'none' }}
                 position={'absolute'}
                 top={'49%'}
                 left={'0%'}
@@ -55,6 +69,7 @@ export const ProductSlider = (props: ProductSliderProps) => {
                 }
             />
             <CustomButton
+                _after={{ display: 'none' }}
                 position={'absolute'}
                 top={'49%'}
                 left={'calc(100% - 3%)'}
