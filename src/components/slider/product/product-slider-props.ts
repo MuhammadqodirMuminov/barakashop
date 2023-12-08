@@ -1,5 +1,6 @@
-// import { IProductCard } from '@/types';
+import { ICategory, IProductCard } from '@/types';
 
 export interface ProductSliderProps {
-	items: any[];
+	items: IProductCard[];
+	category?: ICategory;
 }
