@@ -4,8 +4,8 @@ import * as S from "./Footer.styled";
 
 // import ChatIcon from 'public/icons/chat.svg'
 
-// import VisaIcon from "public/icons/payments/visa.svg";
-// import MasterCardIcon from "public/icons/payments/mastercard.svg";
+import VisaIcon from "@/assets/icons/payments/visa.svg";
+import MasterCardIcon from "@/assets/icons/payments/mastercard.svg";
 import { Link } from "react-router-dom";
 import { Text } from "@chakra-ui/react";
 
@@ -57,47 +57,11 @@ export const Footer = () => {
   const payments = [
     {
       label: "visa",
-      icon: (
-        <svg
-          width="47"
-          height="16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M20.202 15.73h-3.776l2.362-14.64h3.776l-2.362 14.64ZM33.893 1.448a9.287 9.287 0 0 0-3.387-.623c-3.73 0-6.356 1.993-6.372 4.843-.031 2.103 1.88 3.27 3.31 3.972 1.46.716 1.957 1.184 1.957 1.823-.014.98-1.18 1.433-2.267 1.433-1.508 0-2.316-.234-3.544-.78l-.497-.233-.529 3.286c.886.405 2.518.764 4.212.78 3.963 0 6.543-1.963 6.573-5 .015-1.667-.994-2.944-3.17-3.988-1.32-.67-2.13-1.121-2.13-1.806.016-.624.685-1.262 2.176-1.262a6.404 6.404 0 0 1 2.813.56l.342.156.513-3.161ZM38.911 10.544c.311-.841 1.508-4.096 1.508-4.096-.016.031.31-.857.497-1.402l.264 1.262s.715 3.504.87 4.236h-3.139Zm4.662-9.454h-2.921c-.901 0-1.585.265-1.974 1.215l-5.61 13.425h3.963l.793-2.196h4.848c.109.514.451 2.196.451 2.196h3.497L43.573 1.09ZM13.271 1.09l-3.698 9.983-.404-2.024C8.485 6.712 6.34 4.174 3.947 2.912l3.388 12.803h3.994L17.264 1.09H13.27Z"
-            fill="#fff"
-          ></path>
-          <path
-            d="M6.138 1.09H.062L0 1.386C4.74 2.601 7.879 5.53 9.168 9.05l-1.32-6.728c-.218-.935-.886-1.2-1.71-1.23Z"
-            fill="#B1B4B9"
-          ></path>
-        </svg>
-      ),
+      icon: <img src={VisaIcon} alt="" />,
     },
     {
       label: "mastercard",
-      icon: (
-        <svg
-          width="27"
-          height="16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M18.792 15.816H10.83V.959h7.962v14.857Z"
-            fill="#B1B4B9"
-          ></path>
-          <path
-            d="M10.434 8a8 8 0 0 1 3.04-6.29A7.902 7.902 0 0 0 8.554 0C4.158 0 .594 3.582.594 8s3.564 8 7.96 8c1.857 0 3.566-.64 4.92-1.71A8 8 0 0 1 10.434 8Z"
-            fill="#F5F3F0"
-          ></path>
-          <path
-            d="M26.348 8c0 4.418-3.564 8-7.96 8a7.905 7.905 0 0 1-4.921-1.71A8 8 0 0 0 16.507 8a8 8 0 0 0-3.04-6.29A7.905 7.905 0 0 1 18.387 0c4.397 0 7.96 3.582 7.96 8Z"
-            fill="#7A7A7E"
-          ></path>
-        </svg>
-      ),
+      icon: <img src={MasterCardIcon} alt="" />,
     },
   ];
 
