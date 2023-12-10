@@ -56,7 +56,7 @@ export const Routes = ({ isAuth }: IRoutesProps) =>
 					element: <SellerLayout />,
 					children: [
 						{
-							path: ROUTES.sellerHome,
+							path: ROUTES.seller,
 							element: (
 								<Suspense fallback={<Loading />}>
 									<SellerHome />
