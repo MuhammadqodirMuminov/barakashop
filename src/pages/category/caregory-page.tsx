@@ -13,7 +13,7 @@ export const CaregoryPage = () => {
         description: 'Sizga kerakli hamma narsa bizda bor',
         products,
     };
-    const { id, title, categoty_image, description } = category;
+    const { title, categoty_image, description } = category;
     return (
         <S.Main>
             <S.Container>
@@ -24,8 +24,7 @@ export const CaregoryPage = () => {
                         maxW={'60px'}
                         maxH={'60px'}
                         mr={'5px'}
-                        src={categoty_image ? `${BASE_URL}/${categoty_image}` : noThumbnailImage
-                        }
+                        src={categoty_image ? `${BASE_URL}/${categoty_image}` : noThumbnailImage}
                         objectFit={'cover'}
                     />
                     <Text
