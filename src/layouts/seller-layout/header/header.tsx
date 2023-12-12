@@ -15,17 +15,17 @@ export const Header = () => {
             <S.Container>
                 <S.WrapperList>
                     <S.Item>
-                        <S.LinkItem to={'/seller'}>SHOP</S.LinkItem>
+                        <S.LinkItem to={ROUTES.seller}>SHOP</S.LinkItem>
                     </S.Item>
                     <S.SubWrapperList>
                         <S.SubItem>
-                            <S.NavLinkItem to={'/seller'}>
+                            <S.NavLinkItem to={ROUTES.seller}>
                                 {HeaderDashboardIcon()}
                                 <S.Span>Dashboard</S.Span>
                             </S.NavLinkItem>
                         </S.SubItem>
                         <S.SubItem>
-                            <S.NavLinkItem to={'/seller'}>
+                            <S.NavLinkItem to={ROUTES.sellerMarket}>
                                 {HeaderMarketIcon()}
                                 <S.Span>Market</S.Span>
                             </S.NavLinkItem>
@@ -37,16 +37,15 @@ export const Header = () => {
                             </S.NavLinkItem>
                         </S.SubItem>
                         <S.SubItem>
-                            <S.NavLinkItem to={'/seller'}>
+                            <S.NavLinkItem to={ROUTES.sellerStatistics}>
                                 {HeaderStatists()}
 
                                 <S.Span>Statistika</S.Span>
                             </S.NavLinkItem>
                         </S.SubItem>
                         <S.SubItem>
-                            <S.NavLinkItem to={'/seller'}>
+                            <S.NavLinkItem to={ROUTES.sellerPayment}>
                                 {HeaderPaymentIcon()}
-
                                 <S.Span>To'lov</S.Span>
                             </S.NavLinkItem>
                         </S.SubItem>
