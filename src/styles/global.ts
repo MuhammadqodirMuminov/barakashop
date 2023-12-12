@@ -41,6 +41,7 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     font-size: var(--base);
+    height: 100vh;
   }
 
   #root {
