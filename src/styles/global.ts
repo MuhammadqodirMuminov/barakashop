@@ -45,7 +45,9 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   #root {
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
   }
 
   svg:not([fill]) {
