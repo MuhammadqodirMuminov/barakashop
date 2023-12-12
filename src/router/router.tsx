@@ -9,12 +9,15 @@ import {
 	Home,
 	SearchResult,
 	SellerHome,
+	SellerMarket,
 	SellerOqim,
+	SellerPayment,
 	SellerProfile,
 	SellerProfileBotAdd,
 	SellerProfileChangePassword,
 	SellerProfileChangePhone,
 	SellerProfileEditSeller,
+	SellerStatistics,
 	SignIn,
 } from './loadable/loadible';
 import { ProtectedRoutes } from './private/private-routes';
@@ -77,10 +80,34 @@ export const Routes = ({ isAuth }: IRoutesProps) =>
 							),
 						},
 						{
+							path: ROUTES.sellerMarket,
+							element: (
+								<Suspense fallback={<Loading />}>
+									<SellerMarket />
+								</Suspense>
+							),
+						},
+						{
 							path: ROUTES.sellerOqim,
 							element: (
 								<Suspense fallback={<Loading />}>
 									<SellerOqim />
+								</Suspense>
+							),
+						},
+						{
+							path: ROUTES.sellerStatistics,
+							element: (
+								<Suspense fallback={<Loading />}>
+									<SellerStatistics />
+								</Suspense>
+							),
+						},
+						{
+							path: ROUTES.sellerPayment,
+							element: (
+								<Suspense fallback={<Loading />}>
+									<SellerPayment />
 								</Suspense>
 							),
 						},

@@ -86,17 +86,22 @@ export const NavLinkItem = styled(NavLink)`
         fill: #727c8e;
     }
 
-    /* svg:last-child {
+    svg:last-child {
         width: 28px;
         height: 28px;
         fill: none;
-    } */
+    }
 
     &.active {
         color: #2997ff;
+        border-bottom: 2px solid #2997ff;
 
         svg {
             fill: red;
+        }
+        svg:last-child {
+            fill: none;
+            color: red;
         }
     }
 `;

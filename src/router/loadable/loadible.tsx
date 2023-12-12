@@ -16,7 +16,13 @@ export const SellerHome = loadable(() => import('../../pages').then(({ SellerHom
 
 export const SignIn = loadable(() => import('../../pages').then(({ SignIn }) => ({ default: SignIn })).catch(handleCatchChunkError), { fallback: <Loading /> });
 
+export const SellerMarket = loadable(() => import('../../pages').then(({ SellerMarket }) => ({ default: SellerMarket })).catch(handleCatchChunkError), { fallback: <Loading /> });
+
 export const SellerOqim = loadable(() => import('../../pages').then(({ SellerOqim }) => ({ default: SellerOqim })).catch(handleCatchChunkError), { fallback: <Loading /> });
+
+export const SellerStatistics = loadable(() => import('../../pages').then(({ SellerStatistics }) => ({ default: SellerStatistics })).catch(handleCatchChunkError), { fallback: <Loading /> });
+
+export const SellerPayment = loadable(() => import('../../pages').then(({ SellerPayment }) => ({ default: SellerPayment })).catch(handleCatchChunkError), { fallback: <Loading /> });
 
 export const SellerProfile = loadable(() => import('../../pages').then(({ SellerProfile }) => ({ default: SellerProfile })).catch(handleCatchChunkError), { fallback: <Loading /> });
 
