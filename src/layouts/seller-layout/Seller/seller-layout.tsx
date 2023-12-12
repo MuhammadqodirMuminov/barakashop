@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Footer } from '../Footer/footer';
-import { Header } from '../Header/header';
+import { Footer } from '../footer/footer';
+import { Header } from '../header/header';
 
 export const SellerLayout: FC = () => {
 	return (
