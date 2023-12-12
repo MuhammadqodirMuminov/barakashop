@@ -9,3 +9,4 @@ export { SellerProfile } from './profile/profile';
 export { SellerProfileEditSeller } from './edit-seller/edit-seller';
 export { SellerProfileChangePassword } from './change-password/change-password';
 export { SellerProfileChangePhone } from './change-phone/change-phone';
+export { SellerProfileBotAdd } from './bot-add/bot-add';
