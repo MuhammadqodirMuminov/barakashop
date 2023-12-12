@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import * as S from './styled';
-import { SellerProfileGridIcon } from '@/ui';
+import { SellerProfileGridIcon, TelegramIcon } from '@/ui';
 import { LockIcon, PhoneIcon } from '@chakra-ui/icons';
 import { ROUTES } from '@/constants';
 
@@ -12,7 +12,9 @@ export const SellerProfile = () => {
                     <S.Sidebar>
                         <S.WrapperList>
                             <S.Item>
-                                <S.NavLinkItem to={ROUTES.sellerProfileEditSeller}>
+                                <S.NavLinkItem
+                                    to={ROUTES.sellerProfileEditSeller}
+                                >
                                     {SellerProfileGridIcon()}
                                     Shaxsiy ma'lumotlar
                                 </S.NavLinkItem>
@@ -33,6 +35,13 @@ export const SellerProfile = () => {
                                 >
                                     <LockIcon />
                                     Parolni o'zgartirish
+                                </S.NavLinkItem>
+                            </S.Item>
+
+                            <S.Item>
+                                <S.NavLinkItem to={ROUTES.sellerProfileBotAdd}>
+                                    {TelegramIcon()}
+                                    Telegram bilan bo'g'lash
                                 </S.NavLinkItem>
                             </S.Item>
                         </S.WrapperList>

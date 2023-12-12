@@ -11,6 +11,7 @@ import {
 	SellerHome,
 	SellerOqim,
 	SellerProfile,
+	SellerProfileBotAdd,
 	SellerProfileChangePassword,
 	SellerProfileChangePhone,
 	SellerProfileEditSeller,
@@ -121,6 +122,14 @@ export const Routes = ({ isAuth }: IRoutesProps) =>
 									element: (
 										<Suspense fallback={<Loading />}>
 											<SellerProfileChangePassword />
+										</Suspense>
+									),
+								},
+								{
+									path: ROUTES.sellerProfileBotAdd,
+									element: (
+										<Suspense fallback={<Loading />}>
+											<SellerProfileBotAdd />
 										</Suspense>
 									),
 								},

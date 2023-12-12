@@ -8,6 +8,7 @@ export const ROUTES = {
 	sellerProfileEditSeller: '/seller/profile/edit',
 	sellerProfileChangePhone: '/seller/profile/change-phone',
 	sellerProfileChangePassword: '/seller/profile/change-password',
+	sellerProfileBotAdd: '/seller/profile/bot-add',
 	detail: '/product-detail/:id',
 	category: '/category/:id',
 	searchResult: '/search-result/:id',

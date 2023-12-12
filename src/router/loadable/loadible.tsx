@@ -25,3 +25,5 @@ export const SellerProfileEditSeller = loadable(() => import('../../pages').then
 export const SellerProfileChangePhone = loadable(() => import('../../pages').then(({ SellerProfileChangePhone }) => ({ default: SellerProfileChangePhone })).catch(handleCatchChunkError), { fallback: <Loading /> });
 
 export const SellerProfileChangePassword = loadable(() => import('../../pages').then(({ SellerProfileChangePassword }) => ({ default: SellerProfileChangePassword })).catch(handleCatchChunkError), { fallback: <Loading /> });
+
+export const SellerProfileBotAdd = loadable(() => import('../../pages').then(({ SellerProfileBotAdd }) => ({ default: SellerProfileBotAdd })).catch(handleCatchChunkError), { fallback: <Loading /> });
