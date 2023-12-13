@@ -1,6 +1,6 @@
 import { media } from '@/styled';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Checkbox as Check } from '@chakra-ui/react';
 
 export const Main = styled.main`
     position: relative;
@@ -24,10 +24,6 @@ export const Title = styled.h1`
     text-align: center;
 `;
 
-export const Text = styled.p`
-    font-size: 2rem;
-`
-
 export const WrapperList = styled.ul`
     display: grid;
     grid-gap: 10px;
@@ -39,9 +35,6 @@ export const WrapperList = styled.ul`
 export const Item = styled.li`
     width: 100%;
     max-width: 310px;
-`;
-
-export const LinkItem = styled(Link)`
     word-wrap: break-word;
     background-clip: initial;
     background-color: #fff;
@@ -58,10 +51,71 @@ export const LinkItem = styled(Link)`
 export const Box = styled.div`
     &:nth-child(1) {
         display: flex;
-        align-items: start;
+        align-items: center;
         justify-content: space-between;
         padding: 0.75rem 1.25rem;
         background-color: rgb(0 0 0 / 3%);
         border-bottom: 1px solid rgba(0, 0, 0, 0.125);
     }
+
+    &:nth-child(2) {
+        padding: 20px;
+    }
+
+    &:nth-child(3) {
+        border-top: 1px solid rgba(0, 0, 0, 0.125);
+    }
 `;
+
+export const Text = styled.p`
+    font-size: 20px;
+
+    &:nth-child(2) {
+        margin-top: 5px;
+        font-size: 16px;
+    }
+`;
+
+export const Span = styled.span`
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333;
+    font-size: 0.9rem;
+    flex-wrap: 400;
+    background-color: #e9ecef;
+`;
+
+export const Checkbox = styled(Check)`
+    margin-top: 10px;
+`;
+
+export const Time = styled.p`
+    display: block;
+    margin-top: 20px;
+    text-align: right;
+`;
+
+export const CopyButton = styled.button`
+    display: block;
+    margin: 15px 20px 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    border: 1px solid #2997ff;
+    background-color: #2997ff;
+
+    &:hover {
+        background-color: #fff;
+        color: #2997ff;
+        border-color: #2997ff;
+    }
+
+    &:active {
+        font-weight: 600;
+        opacity: 0.8;
+    }
+`;
+
+export const AllOqimTitle = styled.h3``;

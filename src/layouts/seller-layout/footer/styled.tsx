@@ -2,10 +2,14 @@ import styled from 'styled-components';
 import { media } from '@/styled';
 
 export const Footer = styled.footer`
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    margin-top: auto;
     padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px -3px 8px;
+
+    ${media.tablet} {
+        padding-bottom: 70px;
+        box-shadow: none;
+    }
 `;
 
 export const Container = styled.div`
