@@ -1,1 +1,1 @@
-export { default as $axios } from './axios.config';
+export { default as $axios } from './axios';
