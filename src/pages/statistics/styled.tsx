@@ -8,7 +8,7 @@ export const Main = styled.main`
 `;
 
 export const Container = styled.div`
-  max-width: 1240px;
+  max-width: 900px;
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
@@ -52,8 +52,6 @@ export const CustomTableAnimate = styled.div`
   height: auto;
 `;
 
-
-
 export const RcTableContent = styled.div`
   overflow: auto;
 `;
@@ -71,6 +69,9 @@ export const Thead = styled.thead`
 
 export const Tr = styled.tr`
   background-color: transparent !important;
+  &:nth-child(2n) {
+    background-color: #f0f4f8 !important;
+  }
 `;
 
 export const Th = styled.th`
@@ -78,14 +79,12 @@ export const Th = styled.th`
   text-transform: capitalize;
   padding: 0.75rem;
   white-space: nowrap;
-  
 `;
 
 export const Td = styled.td`
   cursor: pointer;
   font-size: 16px;
   padding: 0.75rem;
-
 `;
 
 export const Tbody = styled.tbody`
@@ -97,14 +96,10 @@ export const RcTableCell = styled.table`
   padding: 0.75rem;
 `;
 
-
 export const RcTable = styled.div`
   overflow: hidden;
   overflow: auto;
   width: 100%;
 
-  tr:nth-child(2n) {
-  background-color: #f0f4f8;
-    
-  }
+  
 `;

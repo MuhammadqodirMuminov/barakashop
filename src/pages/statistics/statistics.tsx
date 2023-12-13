@@ -66,12 +66,12 @@ export const SellerStatistics = () => {
                           </S.Tr>
                         </S.Thead>
                         <S.Tbody >
-                          <S.Tr
+                        <S.Tr
                             data-row-key={258716}
                             className="rc-table-row rc-table-row-level-0"
                           >
                             
-                            {/* <S.Td >
+                            <S.Td >
                               <strong>Avtonashina uchun nasos</strong>
                             </S.Td>
                             <S.Td >3</S.Td>
@@ -83,7 +83,7 @@ export const SellerStatistics = () => {
                             <S.Td >0</S.Td>
                             <S.Td >0</S.Td>
                             <S.Td >0</S.Td>
-                            <S.Td >0</S.Td> */}
+                            <S.Td >0</S.Td>
                           </S.Tr>
                           
                           <S.Tr
