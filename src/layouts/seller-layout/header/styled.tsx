@@ -99,6 +99,7 @@ export const NavLinkItem = styled(NavLink)`
         svg {
             fill: red;
         }
+
         svg:last-child {
             fill: none;
             color: red;
