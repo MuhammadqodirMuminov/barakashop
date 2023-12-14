@@ -5,15 +5,17 @@ export const SellerPayment = () => {
     <S.Main>
       <S.Container>
         <S.StatWrapper>
-          <S.PaymentWrap >
+          <S.PaymentWrap>
             <S.PaymentCard className="card">
-              <S.PaymentHeader className="card__header">Mening hisobim</S.PaymentHeader>
+              <S.PaymentHeader className="card__header">
+                Mening hisobim
+              </S.PaymentHeader>
               <S.PaymentCardBody className="card__body">
                 <ul>
                   <S.PaymentCardBodyLi>
                     <p className="key">ID raqamingiz:</p>
                     <p className="value">
-                      <strong style={{fontWeight:"bold"}}>6803721</strong>
+                      <strong style={{ fontWeight: "bold" }}>6803721</strong>
                     </p>
                   </S.PaymentCardBodyLi>
                   <S.PaymentCardBodyLi>
@@ -36,11 +38,11 @@ export const SellerPayment = () => {
                   </S.PaymentCardBodyLi>
                 </ul>
               </S.PaymentCardBody>
-            
-             
             </S.PaymentCard>
             <S.PaymentCard className="card col">
-              <S.PaymentHeader className="card__header">To'lovga sorov berish formasi</S.PaymentHeader>
+              <S.PaymentHeader className="card__header">
+                To'lovga sorov berish formasi
+              </S.PaymentHeader>
               <S.PaymentCardBody className="card__body">
                 <form>
                   <S.StatWrapper>
@@ -71,12 +73,7 @@ export const SellerPayment = () => {
                       />
                       <p className="form__error" />
                     </S.FormGroup>
-                    <Button
-                      type="submit"
-                      
-                    >
-                      Tasdiqlash
-                    </Button>
+                    <Button type="submit">Tasdiqlash</Button>
                   </S.StatWrapper>
                 </form>
               </S.PaymentCardBody>
@@ -97,7 +94,6 @@ export const SellerPayment = () => {
                             <S.Th scope="col">Summa</S.Th>
                             <S.Th scope="col">Holat</S.Th>
                             <S.Th scope="col">Action</S.Th>
-                           
                           </S.Tr>
                         </S.Thead>
                         <S.Tbody>
@@ -128,8 +124,6 @@ export const SellerPayment = () => {
                             <S.Td>0</S.Td>
                             <S.Td>0</S.Td>
                             <S.Td>0</S.Td>
-                    
-                            
                           </S.Tr>
                         </S.Tbody>
                       </S.Table>
