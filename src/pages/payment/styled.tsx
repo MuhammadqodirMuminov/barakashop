@@ -1,6 +1,5 @@
 import { media } from "@/styled";
 import styled from "styled-components";
-import { Link, NavLink } from "react-router-dom";
 const media760 = media.createMedia(760);
 const media680 = media.createMedia(680);
 
@@ -10,7 +9,7 @@ export const Main = styled.main`
 `;
 
 export const Container = styled.div`
-  max-width: 900px;
+  max-width: 1240px;
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
@@ -66,29 +65,27 @@ export const PaymentCardBody = styled.div`
   padding: 1.25rem;
 `;
 
-
 export const PaymentCardyLi = styled.li`
- align-items: center;
+  align-items: center;
   background-color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
   display: flex;
   gap: 3px;
   padding: 0.75rem 1.25rem;
   position: relative;
-  
 `;
 
 export const PaymentCardBodyLi = styled.li`
- display: flex;
+  display: flex;
   gap: 8px;
   justify-content: flex-start;
   align-items: center;
-    background-color: #fff;
-    border-bottom: 1px solid rgba(0,0,0,.125);
-    display: flex;
-    gap: 3px;
-    padding: 0.75rem 1.25rem;
-    position: relative;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  display: flex;
+  gap: 3px;
+  padding: 0.75rem 1.25rem;
+  position: relative;
 `;
 
 export const PaymentCardBodyP = styled.p`
@@ -96,18 +93,18 @@ export const PaymentCardBodyP = styled.p`
 `;
 
 export const FormGroup = styled.div`
-    margin-bottom: 0;
+  margin-bottom: 0;
   padding-bottom: 20px;
   position: relative;
 `;
 
 export const LabelGroup = styled.label`
-   display: inline-block;
+  display: inline-block;
   margin-bottom: 0.385rem;
 `;
 
 export const FormControlInput = styled.input`
-   -webkit-appearance: none;
+  -webkit-appearance: none;
   appearance: none;
   background-clip: padding-box;
   background-color: #fff;
@@ -122,7 +119,6 @@ export const FormControlInput = styled.input`
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   width: 100%;
 `;
-
 
 export const CustomTable = styled.div`
   border: 1px solid #d7e1ea;
@@ -155,8 +151,7 @@ export const Thead = styled.thead`
 
 export const Tr = styled.tr`
   background-color: transparent !important;
-`;import { FormControl } from '@chakra-ui/react';
-
+`;
 
 export const Th = styled.th`
   text-align: left;
