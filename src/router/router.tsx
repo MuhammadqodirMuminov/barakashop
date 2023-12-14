@@ -1,12 +1,28 @@
 import { Suspense } from 'react';
 import { useRoutes } from 'react-router-dom';
-import { Loading } from '../UI';
 import { ROUTES } from '../constants';
 import { PageLayout, SellerLayout } from '../layouts';
-import { CaregoryPage, DetailPage, Home, SearchResult, SellerHome, SignIn } from './loadible';
-import { ProtectedRoutes } from './protected.routes';
-import { PublicRoutes } from './public.routes';
-import { IRoutesProps } from './router.props';
+import { Loading } from '../ui';
+import {
+	CaregoryPage,
+	DetailPage,
+	Home,
+	SearchResult,
+	SellerHome,
+	SellerMarket,
+	SellerOqim,
+	SellerPayment,
+	SellerProfile,
+	SellerProfileBotAdd,
+	SellerProfileChangePassword,
+	SellerProfileChangePhone,
+	SellerProfileEditSeller,
+	SellerStatistics,
+	SignIn,
+} from './loadable/loadible';
+import { ProtectedRoutes } from './private/private-routes';
+import { PublicRoutes } from './public/public-routes';
+import { IRoutesProps } from './type';
 
 export const Routes = ({ isAuth }: IRoutesProps) =>
 	useRoutes([
@@ -56,12 +72,95 @@ export const Routes = ({ isAuth }: IRoutesProps) =>
 					element: <SellerLayout />,
 					children: [
 						{
-							path: ROUTES.sellerHome,
+							path: ROUTES.seller,
 							element: (
 								<Suspense fallback={<Loading />}>
 									<SellerHome />
 								</Suspense>
 							),
+						},
+						{
+							path: ROUTES.sellerMarket,
+							element: (
+								<Suspense fallback={<Loading />}>
+									<SellerMarket />
+								</Suspense>
+							),
+						},
+						{
+							path: ROUTES.sellerOqim,
+							element: (
+								<Suspense fallback={<Loading />}>
+									<SellerOqim />
+								</Suspense>
+							),
+						},
+						{
+							path: ROUTES.sellerStatistics,
+							element: (
+								<Suspense fallback={<Loading />}>
+									<SellerStatistics />
+								</Suspense>
+							),
+						},
+						{
+							path: ROUTES.sellerPayment,
+							element: (
+								<Suspense fallback={<Loading />}>
+									<SellerPayment />
+								</Suspense>
+							),
+						},
+						{
+							path: ROUTES.sellerProfile,
+							element: (
+								<Suspense fallback={<Loading />}>
+									<SellerProfile />
+								</Suspense>
+							),
+							children: [
+								{
+									index: true,
+									path: ROUTES.sellerProfile,
+									element: (
+										<Suspense fallback={<Loading />}>
+											<SellerProfileEditSeller />
+										</Suspense>
+									),
+								},
+								{
+									path: ROUTES.sellerProfileEditSeller,
+									element: (
+										<Suspense fallback={<Loading />}>
+											<SellerProfileEditSeller />
+										</Suspense>
+									),
+								},
+								{
+									path: ROUTES.sellerProfileChangePhone,
+									element: (
+										<Suspense fallback={<Loading />}>
+											<SellerProfileChangePhone />
+										</Suspense>
+									),
+								},
+								{
+									path: ROUTES.sellerProfileChangePassword,
+									element: (
+										<Suspense fallback={<Loading />}>
+											<SellerProfileChangePassword />
+										</Suspense>
+									),
+								},
+								{
+									path: ROUTES.sellerProfileBotAdd,
+									element: (
+										<Suspense fallback={<Loading />}>
+											<SellerProfileBotAdd />
+										</Suspense>
+									),
+								},
+							],
 						},
 					],
 				},

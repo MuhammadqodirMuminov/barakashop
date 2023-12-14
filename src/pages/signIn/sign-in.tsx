@@ -1,6 +1,6 @@
 ('use client');
-import { InputField, PageTitle } from '@/UI';
-import { CustomButton } from '@/UI/button/button';
+import { InputField, PageTitle } from '@/ui';
+import { CustomButton } from '@/ui/button/custom';
 import { AtSignIcon, PhoneIcon } from '@chakra-ui/icons';
 import { Box, Flex, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, useColorModeValue } from '@chakra-ui/react';
 
@@ -12,36 +12,47 @@ export function SignIn() {
 				<Box rounded={'lg'} bg={useColorModeValue('white', 'gray.700')} boxShadow={'lg'} p={8}>
 					<Tabs isFitted variant='enclosed'>
 						<TabList mb='1em'>
-							<Tab>
-								<AtSignIcon /> <span>with password</span>
+							<Tab gap={6}>
+								<AtSignIcon /> <span> password</span>
 							</Tab>
-							<Tab>
-								<PhoneIcon /> with phone
+							<Tab gap={6}>
+								<PhoneIcon /> phone
 							</Tab>
 						</TabList>
 						<TabPanels>
 							<TabPanel>
-								<p>one!</p>
+								<Stack spacing={4}>
+									<InputField text='Username' type='text' props={{ placeholder: 'Your username' }} />
+									<InputField text='Password' type='password' props={{ placeholder: 'Your password' }} />
+									<Stack spacing={10}>
+										<CustomButton
+											text={'Sign in'}
+											bg={'blue.400'}
+											color={'white'}
+											_hover={{
+												bg: 'blue.500',
+											}}
+										/>
+									</Stack>
+								</Stack>
 							</TabPanel>
 							<TabPanel>
-								<p>two!</p>
+								<Stack spacing={4}>
+									<InputField text='Your phone' type='text' props={{ placeholder: 'Your phone' }} />
+									<Stack spacing={10}>
+										<CustomButton
+											text={'Sign in'}
+											bg={'blue.400'}
+											color={'white'}
+											_hover={{
+												bg: 'blue.500',
+											}}
+										/>
+									</Stack>
+								</Stack>
 							</TabPanel>
 						</TabPanels>
 					</Tabs>
-					<Stack spacing={4}>
-						<InputField text='Username' type='text' props={{ placeholder: 'Your username' }} />
-						<InputField text='Password' type='password' props={{ placeholder: 'Your password' }} />
-						<Stack spacing={10}>
-							<CustomButton
-								text={'Sign in'}
-								bg={'blue.400'}
-								color={'white'}
-								_hover={{
-									bg: 'blue.500',
-								}}
-							/>
-						</Stack>
-					</Stack>
 				</Box>
 			</Stack>
 		</Flex>

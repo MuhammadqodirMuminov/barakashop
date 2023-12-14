@@ -10,11 +10,12 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"@chakra-ui/counter": "^2.1.0",
 		"@chakra-ui/icons": "^2.1.1",
 		"@chakra-ui/react": "^2.8.2",
 		"@emotion/react": "^11.11.1",
-		"@emotion/styled": "^11.11.0",
 		"@loadable/component": "^5.15.3",
+		"@mui/material": "^5.14.20",
 		"@reduxjs/toolkit": "^1.9.7",
 		"@types/loadable__component": "^5.13.7",
 		"@types/styled-components": "^5.1.32",

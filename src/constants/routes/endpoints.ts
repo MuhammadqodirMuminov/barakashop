@@ -1,0 +1,18 @@
+export const ROUTES = {
+	signIn: '/sign-in',
+	home: '/',
+	seller: '/seller',
+	sellerHome: '/seller/home',
+	sellerMarket: '/seller/market',
+	sellerOqim: '/seller/oqim',
+	sellerStatistics: '/seller/statistics',
+	sellerPayment: '/seller/payment',
+	sellerProfile: '/seller/profile',
+	sellerProfileEditSeller: '/seller/profile/edit',
+	sellerProfileChangePhone: '/seller/profile/change-phone',
+	sellerProfileChangePassword: '/seller/profile/change-password',
+	sellerProfileBotAdd: '/seller/profile/bot-add',
+	detail: '/product-detail/:id',
+	category: '/category/:id',
+	searchResult: '/search-result/:id',
+};

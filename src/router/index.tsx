@@ -1,4 +1,4 @@
-import { Loading } from '../UI';
+import { Loading } from '@/ui';
 import { useBootstrap } from '../hooks';
 import { Routes } from './router';
 
