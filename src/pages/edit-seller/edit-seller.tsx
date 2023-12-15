@@ -1,17 +1,21 @@
 import * as S from './styled';
 import { SellerHomeProfileIcon } from '@/ui';
 import { EditIcon } from '@chakra-ui/icons';
+import { Skeleton, SkeletonCircle } from '@chakra-ui/react';
 
 export const SellerProfileEditSeller = () => {
+    const loading = false
     return (
         <S.Main>
             <S.Container>
                 <S.Title>Shaxsiy ma'lumotlar</S.Title>
                 <S.Wrapper>
                     <S.RightSide>
+                        <SkeletonCircle isLoaded={loading} size={20}>
                         {SellerHomeProfileIcon()}
+                        </SkeletonCircle>
                         <S.Box>
-                            <S.Name>Nasriddinov Bunyod</S.Name>
+                            <S.Name><Skeleton isLoaded={loading}>Nasriddinov Bunyod</Skeleton></S.Name>
                             <S.ChangeImg>
                                 <EditIcon
                                     fontSize={'20px'}
@@ -25,7 +29,7 @@ export const SellerProfileEditSeller = () => {
                     <S.HrLine />
                     <S.LeftSide>
                         <S.YourId>
-                            <S.IdNumber>7108402</S.IdNumber>
+                            <S.IdNumber><Skeleton isLoaded={loading}>7108402</Skeleton></S.IdNumber>
                             Sizning ID raqamingiz
                         </S.YourId>
                     </S.LeftSide>

@@ -22,7 +22,7 @@ export const AllCategories = () => {
 				bgColor={'#023581'}
 				color={'#fff'}
 				_hover={{ backgroundColor: '023581' }}
-				text={'Katalog'}
+				text={ <><S.CatalogBtn>Katalog</S.CatalogBtn></> }
 				_active={{ backgroundColor: '023581' }}
 				image={<img src={GridIcon} alt='' />}
 				onClick={onOpen}

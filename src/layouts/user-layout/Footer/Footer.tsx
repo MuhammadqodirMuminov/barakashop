@@ -72,7 +72,7 @@ export const Footer = () => {
 				</S.Top>
 
 				<S.Bottom>
-					<Text>Copyright © ООО «Blabla.bla» 2023. All rights reserved.</Text>
+					<Text>Copyright © ООО «Shop.uz» 2023. All rights reserved.</Text>
 
 					<S.PaymentAccept>
 						<Text>Accept for payment</Text>

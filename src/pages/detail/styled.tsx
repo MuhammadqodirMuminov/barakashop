@@ -29,6 +29,7 @@ export const Img = styled.img`
 export const SingleImageBox = styled.div`
 	width: 100%;
 	max-width: 500px;
+	overflow: hidden;
 	height: 600px;
 	box-sizing: border-box;
 	border-radius: 15px;
