@@ -25,6 +25,15 @@ export const AllCategories = styled.div<AllCategoriesProps>`
 		background-color: none !important;
 	}
 `;
+
+export const CatalogBtn = styled.h3`
+	display: block;
+
+	${media666} {
+		display: none;
+	}
+`
+
 export const CategoriesButton = styled((props: CategoriesButtonProps) => <CustomButton {...props} />)`
 	position: relative;
 	z-index: 10;
