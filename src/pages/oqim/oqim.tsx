@@ -14,6 +14,10 @@ const oqims: IOqim[] = [
 ];
 
 export const SellerOqim = () => {
+    const handleCopy = (link: string) => {
+        navigator.clipboard.writeText(link);
+    };
+
     return (
         <S.Main>
             <S.Container>
@@ -45,7 +49,13 @@ export const SellerOqim = () => {
                                         <S.Time>{created_at}</S.Time>
                                     </S.Box>
                                     <S.Box>
-                                        <S.CopyButton>Nusha olish</S.CopyButton>
+                                        <S.CopyButton
+                                            onClick={() =>
+                                                handleCopy(oqim_link)
+                                            }
+                                        >
+                                            Nusha olish
+                                        </S.CopyButton>
                                     </S.Box>
                                 </S.Item>
                             )

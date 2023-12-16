@@ -2,7 +2,7 @@ import { oilsImg } from '@/assets';
 import { products } from '@/constants';
 import { CustomButton, ProductCard } from '@/ui';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
-import { Text } from '@chakra-ui/react';
+import { Skeleton, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import * as S from './styled';
@@ -23,6 +23,7 @@ interface Product {
 }
 
 export const ProductsOilsSection = () => {
+	const loading = false;
 	const oils: Product[] = [
 		{
 			id: 1,
@@ -73,27 +74,33 @@ export const ProductsOilsSection = () => {
 	return (
 		<S.ProductsOilsSection>
 			<S.Top>
-				<Text fontSize={{ sm: 22, md: 24, lg: 28 }} fontStyle={'normal'} fontWeight={'bolder'} variant='h1'>
-					Recommended products
-				</Text>
+				<Skeleton height={'28px'} isLoaded={loading}>
+					<Text fontSize={{ sm: 22, md: 24, lg: 28 }} fontStyle={'normal'} fontWeight={'bolder'} variant='h1'>
+						Recommended products
+					</Text>
+				</Skeleton>
 
-				<Link to='/'>
-					<CustomButton text='Barcha mahsulotlar' image={<ArrowForwardIcon />} gap={2} />
-				</Link>
+				<Skeleton height={'28px'} isLoaded={loading}>
+					<Link to='/'>
+						<CustomButton text='Barcha mahsulotlar' image={<ArrowForwardIcon />} gap={2} />
+					</Link>
+				</Skeleton>
 			</S.Top>
 
 			<S.Carousel>
 				<Swiper slidesPerView='auto' spaceBetween={20} breakpoints={{ 1200: { slidesPerView: 4, spaceBetween: 20 } }}>
 					<SwiperSlide>
-						<Link to='/'>
-							<S.Banner style={{ backgroundImage: `url(${oilsImg})` }}>
-								<Text variant='h2' as={'p'}>
-									Lorem ipsum <br />
-									dolor sit amet <br />
-									consectetur adipiscing elit
-								</Text>
-							</S.Banner>
-						</Link>
+						<Skeleton isLoaded={loading} borderRadius={'10px'}>
+							<Link to='/'>
+								<S.Banner style={{ backgroundImage: `url(${oilsImg})` }}>
+									<Text variant='h2' as={'p'}>
+										Lorem ipsum <br />
+										dolor sit amet <br />
+										consectetur adipiscing elit
+									</Text>
+								</S.Banner>
+							</Link>
+						</Skeleton>
 					</SwiperSlide>
 
 					{oilsProductsCards}
