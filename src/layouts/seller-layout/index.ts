@@ -1,3 +1,3 @@
-import { SellerLayout } from './seller/seller-layout';
+import { SellerLayout } from './seller/layout';
 
 export { SellerLayout };

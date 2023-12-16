@@ -5,10 +5,6 @@ import { categoriesItems } from '.';
 import * as S from './styled';
 
 export const AllCategories = () => {
-	// const [popperAnchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-
-	// const isPopperOpen = Boolean(popperAnchorEl);
-
 	const { isOpen, onOpen, onClose } = useDisclosure();
 
 	return (
