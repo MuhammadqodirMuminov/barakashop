@@ -3,4 +3,7 @@ export const EndPointes = {
 		signIn: '/auth/login',
 		getme: '/auth/getme',
 	},
+	category: {
+		get: '/category/all'
+	}
 };
