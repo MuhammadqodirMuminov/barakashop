@@ -1,49 +1,51 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { SliceNames } from "../constants";
-import { InitialState } from "./interface";
-import { Category } from "./actions";
+import { getAllCategory } from "./actions";
+import { ICategoryState } from "./interface";
 
-const initialState: InitialState = {
+const initialState: ICategoryState = {
   loading: {
     get: false,
   },
   categories: null,
-  error: null,
+  errors: null,
 };
 
 const categorySlice = createSlice({
   name: SliceNames.category,
   initialState,
   reducers: {
-    categoryLoading: (state) => {
+    setCategoryLoading: (state) => {
       state.loading.get = true;
-      state.error = null;
+      state.errors = null;
     },
-    categorySuccess: (state, { payload }) => {
-      (state.loading.get = false), (state.categories = payload);
+    setCategory: (state, { payload }) => {
+      (state.loading.get = false),
+        (state.categories = payload),
+        (state.errors = null);
     },
 
-    categoryFailed: (state, { payload }) => {
-      state.error = payload;
+    setCategoryFailed: (state, { payload }) => {
+      state.loading.get = false;
+      state.errors = payload;
     },
   },
-	extraReducers: builder => {
-		builder.addCase(Category.pending, state => {
-      state.loading.get = true;
-      state.error = null;
-    })
-    .addCase(Category.fulfilled, (state, { payload }) => {
-      state.error = null;
-      state.categories = payload;
-      state.loading.get = false;
-
-    })
-    .addCase(Category.rejected, (state, { payload }) => {
-      state.error = payload;
-      state.loading.get = false;
-    
-    });
-	}
+  extraReducers: (builder) => {
+    builder
+      .addCase(getAllCategory.pending, (state) => {
+        state.loading.get = true;
+        state.errors = null;
+      })
+      .addCase(getAllCategory.fulfilled, (state, { payload }) => {
+        (state.loading.get = false),
+          (state.categories = payload),
+          (state.errors = null);
+      })
+      .addCase(getAllCategory.rejected, (state, { payload }) => {
+        state.loading.get = false;
+        state.errors = payload as string;
+      });
+  },
 });
 
 export const CategoryReducer = categorySlice.reducer;

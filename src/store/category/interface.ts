@@ -1,9 +1,15 @@
-export interface InitialState {
-	categories: null;
-	loading: {
-		get: boolean;
-	};
-	error: null | string | unknown;
-}
+import { ICategory } from "./../../types/category-types";
 
-export interface IAuthResponse {}
+export interface ICategoryState {
+  loading: {
+    get: boolean;
+  };
+  categories: ICategory[] | null;
+  errors: null | string | string[];
+}
+export interface IAuthResponseCategory extends ICategory {}
+
+
+export interface IArgCategory {
+	callback: (data: any) => void 
+}
