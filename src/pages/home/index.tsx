@@ -1,8 +1,21 @@
 import { MainSlider, ProductSlider, ProductsBanners, ProductsOilsSection } from '@/components';
-import { products } from '@/constants';
+// import { products } from '@/constants';
 import * as S from './styled';
+import { useActions, useTypedSelector } from '@/hooks';
+import { useEffect } from 'react';
+import { ProductQueryType } from '@/store/product/interface';
 
 export const Home = () => {
+	const { getAllProduct } = useActions();
+	const { products } = useTypedSelector(state => state.product)
+	
+	useEffect(() => {
+		getAllProduct({ query: ProductQueryType.all })
+		getAllProduct({ query: ProductQueryType.newest })
+	}, [])
+	
+	console.log('products', products);
+
 	return (
 		<S.Main>
 			<S.Top>
@@ -31,11 +44,11 @@ export const Home = () => {
 						]}
 					/>
 
-					<ProductSlider items={products} title={'Friquendly Sold'} />
+					<ProductSlider items={products || []} title={'Friquendly Sold'} />
 
-					<ProductSlider items={products} title={'New Products'} />
+					<ProductSlider items={products || []} title={'New Products'} />
 
-					<ProductSlider items={products} title={'Discounded products'} />
+					<ProductSlider items={products || []} title={'Discounded products'} />
 				</S.WrapperSlide>
 			</S.Sections>
 		</S.Main>

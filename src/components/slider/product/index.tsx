@@ -10,11 +10,12 @@ import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { ProductSliderProps } from './props';
 import * as S from './styled';
+import { useTypedSelector } from '@/hooks';
 
 export const ProductSlider = (props: ProductSliderProps) => {
 	const prevRef = useRef(null);
 	const nextRef = useRef(null);
-	const loading = false;
+	const loading: boolean = !useTypedSelector(state => state.product.loading.getAll);
 
 	return (
 		<S.ProductsCarousel>

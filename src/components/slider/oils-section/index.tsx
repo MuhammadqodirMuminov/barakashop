@@ -6,6 +6,7 @@ import { Skeleton, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import * as S from './styled';
+import { useTypedSelector } from '@/hooks';
 
 interface Price {
 	new: number;
@@ -23,7 +24,8 @@ interface Product {
 }
 
 export const ProductsOilsSection = () => {
-	const loading = false;
+	const loading: boolean = !useTypedSelector(state => state.product.loading.getAll);
+
 	const oils: Product[] = [
 		{
 			id: 1,

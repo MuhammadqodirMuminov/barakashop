@@ -7,13 +7,15 @@ import { BASE_URL } from '../../../constants/site-constants';
 import { ProductCardProps } from './props';
 import * as S from './styled';
 import { Skeleton } from '@chakra-ui/react';
+import { useTypedSelector } from '@/hooks';
 
 export const ProductCard = ({ product }: ProductCardProps): JSX.Element => {
 	const { id, title, images } = product;
-	const loading = false; 
 	// const thumbImage = images?.urls[0];
 	// const ratingImages = ratingImageGenerate(Number(rating));
 	// const customPrice = product_price ? product_price.toString().replace(/(\d)(?=(\d{3})+(\.(\d){0,2})*$)/g, '$1 ') : product_price;
+
+	const loading: boolean = !useTypedSelector(state => state.product.loading.getAll);
 
 	return (
 		<S.ProductCard>
