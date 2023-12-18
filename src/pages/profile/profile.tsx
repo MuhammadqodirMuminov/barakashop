@@ -4,6 +4,7 @@ import { SellerProfileGridIcon, TelegramIcon } from '@/ui';
 import { LockIcon, PhoneIcon } from '@chakra-ui/icons';
 import { ROUTES } from '@/constants';
 
+
 export const SellerProfile = () => {
     return (
         <S.Main>
@@ -15,7 +16,7 @@ export const SellerProfile = () => {
                                 <S.NavLinkItem
                                     to={ROUTES.sellerProfileEditSeller}
                                 >
-                                    {SellerProfileGridIcon()}
+                                   {SellerProfileGridIcon()}
                                     Shaxsiy ma'lumotlar
                                 </S.NavLinkItem>
                             </S.Item>

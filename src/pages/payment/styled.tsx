@@ -43,6 +43,7 @@ export const PaymentWrap = styled.div`
   display: flex;
   gap: 20px;
   justify-content: space-between;
+  overflow: hidden;
 
   ${media680} {
     flex-direction: column;

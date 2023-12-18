@@ -4,6 +4,8 @@ import { media } from '@/styled/media';
 
 import { ShoppingCartLink } from '../shopping-cart-link/link-styled';
 import { UserEntry } from '../user-entry/styled';
+import { Phone } from '../phone/styled';
+import { CurrentLocation } from '../location-choose/styled';
 
 const media666 = media.createMedia(666);
 
@@ -54,7 +56,7 @@ export const Menu = styled.div`
 export const MenuTop = styled.div`
 	display: flex;
 	align-items: center;
-	justify-content: flex-end;
+	justify-content: space-between;
 	height: 60px;
 	padding: 0 15px;
 
@@ -70,12 +72,13 @@ export const MenuTop = styled.div`
 `;
 
 export const MenuMiddle = styled.div`
-	padding: 20px 0;
+	padding: 15px 0;
 	border-top: 1px solid #e3e3e8;
 	display: flex;
-	/* gap: 20px; */
-	align-items: center;
-	justify-content: space-around;
+	gap: 5px;
+	flex-direction: column;
+	align-items: start;
+	justify-content: start;
 	border-bottom: 1px solid #e3e3e8;
 
 	& > *:not(:last-child) {
@@ -88,6 +91,18 @@ export const MenuMiddle = styled.div`
 		padding-right: 0;
 		background: transparent;
 	}
+
+	${Phone} {
+		span {
+			display: block !important;
+		}
+	}
+
+	${CurrentLocation} {
+		span {
+			display: block !important;
+		}
+	}
 `;
 
 export const MenuBottom = styled.div`
@@ -96,6 +111,10 @@ export const MenuBottom = styled.div`
 
 export const MenuNavList = styled.ul`
 	list-style: none;
+`;
+
+export const MenuNavItem = styled.li`
+	padding: 5px 0;
 `;
 
 export const MenuNavLink = styled.a`
