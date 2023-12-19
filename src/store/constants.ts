@@ -8,6 +8,7 @@ export const loadings: IStoreLoadings = {
 };
 
 export const SliceNames = {
+    ads: 'ads',
     category: 'category',
     product: 'product',
 };

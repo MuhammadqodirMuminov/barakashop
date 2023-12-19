@@ -1,33 +1,28 @@
 import { MainSlider, ProductSlider, ProductsBanners, ProductsOilsSection } from '@/components';
-import { products as tempProducts} from '@/constants';
+import { products as tempProducts, tempAds } from '@/constants';
 import * as S from './styled';
 import { useActions, useTypedSelector } from '@/hooks';
 import { useEffect } from 'react';
 
 export const Home = () => {
-	const { getAllProduct, getRecomendedProduct, getFrequentlyProduct, getNewestProduct } = useActions();
-	const { products, recomendedProducts, frequentlyProducts, newestProducts } = useTypedSelector(state => state.product)
+	const { getAllAds, getAllProduct, getRecomendedProduct, getFrequentlyProduct, getNewestProduct } = useActions();
+	const { recomendedProducts, frequentlyProducts, newestProducts } = useTypedSelector(state => state.product);
+	const { ads } = useTypedSelector(state => state.ads);
 	
 	useEffect(() => {
-		getAllProduct({})
-		getRecomendedProduct({})
-		getFrequentlyProduct({})
-		getNewestProduct({})
-	}, [])
+		getAllProduct({});
+		getRecomendedProduct({});
+		getFrequentlyProduct({});
+		getNewestProduct({});
+		getAllAds({});
+	}, []);
 	
-	console.log('products', products);
-	console.log('new products', recomendedProducts);
-
 	return (
 		<S.Main>
 			<S.Top>
 				<S.WrapperSlide>
 					<MainSlider
-						ads={[
-							{ id: 1, ads_title: 'Qaynoq yozda qaynoq aksiyalar', ads_persent: '30', ads_description: 'Olingan har bir mahsulot uchun 30% chegirma.' },
-							{ id: 1, ads_title: 'Qaynoq yozda qaynoq aksiyalar', ads_persent: '30', ads_description: 'Olingan har bir mahsulot uchun 30% chegirma.' },
-							{ id: 1, ads_title: 'Qaynoq yozda qaynoq aksiyalar', ads_persent: '30', ads_description: 'Olingan har bir mahsulot uchun 30% chegirma.' },
-						]}
+						ads={ads || tempAds}
 					/>
 				</S.WrapperSlide>
 			</S.Top>
@@ -46,11 +41,12 @@ export const Home = () => {
 						]}
 					/>
 
-					<ProductSlider items={frequentlyProducts || tempProducts} title={'Friquendly Sold'} />
+					<ProductSlider items={recomendedProducts || tempProducts} title={'Recomended products'} />
+
+					<ProductSlider items={frequentlyProducts || tempProducts} title={'Frequently Sold'} />
 
 					<ProductSlider items={newestProducts || tempProducts} title={'New Products'} />
 
-					<ProductSlider items={newestProducts || tempProducts} title={'Discounded products'} />
 				</S.WrapperSlide>
 			</S.Sections>
 		</S.Main>

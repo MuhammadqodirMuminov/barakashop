@@ -4,7 +4,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { IArgProduct, IResponseOneProduct, IResponseProduct } from './interface';
 import { EndPointes } from '@/services/endpoints';
 
-export const getAllProduct = createAsyncThunk<IResponseProduct, IArgProduct>(EndPointes.product.getAll,async (_, thunkApi) => {
+export const getAllProduct = createAsyncThunk<IResponseProduct, IArgProduct>(EndPointes.product.getAll, async (_, thunkApi) => {
     try {
         const response = await ProductService.getAll();
         if (response.data) {
@@ -19,9 +19,7 @@ export const getAllProduct = createAsyncThunk<IResponseProduct, IArgProduct>(End
 
 export const getRecomendedProduct = createAsyncThunk<IResponseProduct, IArgProduct>(EndPointes.product.getRecomended, async (_, thunkApi) => {
     try {
-        const response = await ProductService.getRecomended();
-        console.log('res', response);
-        
+        const response = await ProductService.getRecomended();        
         if (response.data) {
             return response.data;
         }
