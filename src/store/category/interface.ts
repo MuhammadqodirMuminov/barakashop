@@ -4,12 +4,14 @@ export interface ICategoryState {
   loading: {
     get: boolean;
   };
-  categories: any;
+  categories: ICategory[] | null;
   errors: null | string | string[];
 }
-export interface IAuthResponseCategory extends ICategory {}
-
-
-export interface IArgCategory {
-	callback: (data: any) => void 
+export interface IResponseCategory {
+  status: number;
+  data: ICategory[];
+  message: string;
 }
+
+
+export interface IArgCategory {}

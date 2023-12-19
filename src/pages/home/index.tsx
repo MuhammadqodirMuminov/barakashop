@@ -1,13 +1,14 @@
 import { MainSlider, ProductSlider, ProductsBanners, ProductsOilsSection } from '@/components';
-import { products as tempProducts, tempAds } from '@/constants';
+import { products as tempProducts, tempAds, tempCategories,  } from '@/constants';
 import * as S from './styled';
 import { useActions, useTypedSelector } from '@/hooks';
 import { useEffect } from 'react';
 
 export const Home = () => {
-	const { getAllAds, getAllProduct, getRecomendedProduct, getFrequentlyProduct, getNewestProduct } = useActions();
+	const { getAllAds, getAllProduct, getRecomendedProduct, getFrequentlyProduct, getNewestProduct, getAllCategory } = useActions();
 	const { recomendedProducts, frequentlyProducts, newestProducts } = useTypedSelector(state => state.product);
 	const { ads } = useTypedSelector(state => state.ads);
+	const { categories } = useTypedSelector(state => state.category);
 	
 	useEffect(() => {
 		getAllProduct({});
@@ -15,7 +16,9 @@ export const Home = () => {
 		getFrequentlyProduct({});
 		getNewestProduct({});
 		getAllAds({});
+		getAllCategory({})
 	}, []);
+console.log(categories);
 
 	return (
 		<S.Main>
@@ -31,15 +34,7 @@ export const Home = () => {
 				<S.WrapperSlide>
 					<ProductsOilsSection />
 
-					<ProductsBanners
-						titles='Top categories'
-						categories={[
-							{ id: 1, title: 'Catgory1', categoty_image: '' },
-							{ id: 1, title: 'Catgory1', categoty_image: '' },
-							{ id: 1, title: 'Catgory1', categoty_image: '' },
-							{ id: 1, title: 'Catgory1', categoty_image: '' },
-						]}
-					/>
+					<ProductsBanners titles='Top categories' categories={categories || tempCategories} />
 
 					<ProductSlider items={recomendedProducts || tempProducts} title={'Recomended products'} />
 

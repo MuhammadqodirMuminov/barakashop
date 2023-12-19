@@ -4,7 +4,7 @@ export const EndPointes = {
         getme: '/auth/getme',
     },
     category: {
-        getAll: '/category/all',
+        getAll: '/category/get-all',
     },
     product: {
         getAll: '/product/get-all',

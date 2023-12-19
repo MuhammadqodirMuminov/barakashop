@@ -20,9 +20,9 @@ const categorySlice = createSlice({
       state.errors = null;
     },
     setCategory: (state, { payload }) => {
-      (state.loading.get = false),
-        (state.categories = payload),
-        (state.errors = null);
+      state.loading.get = false;
+      state.categories = payload;
+      state.errors = null;
     },
 
     setCategoryFailed: (state, { payload }) => {
@@ -37,9 +37,9 @@ const categorySlice = createSlice({
         state.errors = null;
       })
       .addCase(getAllCategory.fulfilled, (state, { payload }) => {
-        (state.loading.get = false),
-          (state.categories = payload),
-          (state.errors = null);
+        state.loading.get = false;
+        state.categories = payload.data;
+        state.errors = null;
       })
       .addCase(getAllCategory.rejected, (state, { payload }) => {
         state.loading.get = false;

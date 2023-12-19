@@ -11,7 +11,6 @@ import { useTypedSelector } from '@/hooks';
 
 export const ProductCard = ({ product }: ProductCardProps): JSX.Element => {
 	const { id, title, images } = product;
-	const loading = false; 
 	// const thumbImage = images?.urls[0];
 	// const ratingImages = ratingImageGenerate(Number(rating));
 	// const customPrice = product_price ? product_price.toString().replace(/(\d)(?=(\d{3})+(\.(\d){0,2})*$)/g, '$1 ') : product_price;
