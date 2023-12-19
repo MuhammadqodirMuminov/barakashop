@@ -1,20 +1,22 @@
 import { MainSlider, ProductSlider, ProductsBanners, ProductsOilsSection } from '@/components';
-// import { products } from '@/constants';
+import { products as tempProducts} from '@/constants';
 import * as S from './styled';
 import { useActions, useTypedSelector } from '@/hooks';
 import { useEffect } from 'react';
-import { ProductQueryType } from '@/store/product/interface';
 
 export const Home = () => {
-	const { getAllProduct } = useActions();
-	const { products } = useTypedSelector(state => state.product)
+	const { getAllProduct, getRecomendedProduct, getFrequentlyProduct, getNewestProduct } = useActions();
+	const { products, recomendedProducts, frequentlyProducts, newestProducts } = useTypedSelector(state => state.product)
 	
 	useEffect(() => {
-		getAllProduct({ query: ProductQueryType.all })
-		getAllProduct({ query: ProductQueryType.newest })
+		getAllProduct({})
+		getRecomendedProduct({})
+		getFrequentlyProduct({})
+		getNewestProduct({})
 	}, [])
 	
 	console.log('products', products);
+	console.log('new products', recomendedProducts);
 
 	return (
 		<S.Main>
@@ -44,11 +46,11 @@ export const Home = () => {
 						]}
 					/>
 
-					<ProductSlider items={products || []} title={'Friquendly Sold'} />
+					<ProductSlider items={frequentlyProducts || tempProducts} title={'Friquendly Sold'} />
 
-					<ProductSlider items={products || []} title={'New Products'} />
+					<ProductSlider items={newestProducts || tempProducts} title={'New Products'} />
 
-					<ProductSlider items={products || []} title={'Discounded products'} />
+					<ProductSlider items={newestProducts || tempProducts} title={'Discounded products'} />
 				</S.WrapperSlide>
 			</S.Sections>
 		</S.Main>

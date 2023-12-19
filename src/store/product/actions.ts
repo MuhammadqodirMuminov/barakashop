@@ -1,7 +1,7 @@
 import { ProductService } from '@/services';
 import { addNotification, errorCatch } from '@/utils';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { IArgProduct, IResponseProduct } from './interface';
+import { IArgProduct, IResponseOneProduct, IResponseProduct } from './interface';
 import { EndPointes } from '@/services/endpoints';
 
 export const getAllProduct = createAsyncThunk<IResponseProduct, IArgProduct>(EndPointes.product.getAll,async (_, thunkApi) => {
@@ -11,15 +11,17 @@ export const getAllProduct = createAsyncThunk<IResponseProduct, IArgProduct>(End
             return response.data;
         }
     } catch (error) {
-        addNotification(error);
-        return thunkApi.rejectWithValue({ error: errorCatch(error) });
-    }
+            addNotification(error);
+            return thunkApi.rejectWithValue({ error: errorCatch(error) });
+        }
     }
 );
 
 export const getRecomendedProduct = createAsyncThunk<IResponseProduct, IArgProduct>(EndPointes.product.getRecomended, async (_, thunkApi) => {
     try {
         const response = await ProductService.getRecomended();
+        console.log('res', response);
+        
         if (response.data) {
             return response.data;
         }
@@ -45,7 +47,20 @@ export const getNewestProduct = createAsyncThunk<IResponseProduct, IArgProduct>(
     const response = await ProductService.getNewest();
         try {
             if (response.data) {
-                    return response.data;
+                return response.data;
+            }
+        } catch (error) {
+            addNotification(error);
+            return thunkApi.rejectWithValue({ error: errorCatch(error) });
+        }
+    }
+);
+
+export const getOneProduct = createAsyncThunk<IResponseOneProduct, IArgProduct>(EndPointes.product.getOne,async ({ id }, thunkApi) => {
+    const response = await ProductService.getOne(id as string);
+        try {
+            if (response.data) {
+                return response.data;
             }
         } catch (error) {
             addNotification(error);

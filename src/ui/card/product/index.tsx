@@ -15,7 +15,7 @@ export const ProductCard = ({ product }: ProductCardProps): JSX.Element => {
 	// const ratingImages = ratingImageGenerate(Number(rating));
 	// const customPrice = product_price ? product_price.toString().replace(/(\d)(?=(\d{3})+(\.(\d){0,2})*$)/g, '$1 ') : product_price;
 
-	const loading: boolean = !useTypedSelector(state => state.product.loading.getAll);
+	const loading: boolean = !useTypedSelector(state => state.product.loading.getRecomended);
 
 	return (
 		<S.ProductCard>

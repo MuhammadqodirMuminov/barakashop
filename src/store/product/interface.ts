@@ -3,9 +3,16 @@ import { IProductCard } from '@/types';
 export interface IProductState {
     loading: {
         getAll: boolean;
+        getRecomended: boolean;
+        getFrequently: boolean;
+        getNewest: boolean;
+        getOne: boolean;
     };
     products: IProductCard[] | null;
+    recomendedProducts: IProductCard[] | null;
+    frequentlyProducts: IProductCard[] | null;
     newestProducts: IProductCard[] | null;
+    oneProduct: IProductCard | null;
     errors: null | string | string[];
 }
 export interface IResponseProduct {
@@ -13,14 +20,12 @@ export interface IResponseProduct {
     data: IProductCard[];
     message: string;
 }
-
-export enum ProductQueryType {
-    all = '',
-    recommended = '?recommended=true',
-    friquentlySold = '?friquentlysold=true',
-    newest = '?newest=true',
+export interface IResponseOneProduct {
+    status: number;
+    data: IProductCard;
+    message: string;
 }
 
 export interface IArgProduct {
-    query: ProductQueryType;
+    id?: string;
 }

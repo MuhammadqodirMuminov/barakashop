@@ -8,6 +8,8 @@ export const ProductService = {
     },
     async getRecomended() {
         const response = await $axios.get(EndPointes.product.getRecomended);
+        console.log('rec', response);
+
         return response;
     },
     async getFrequentlySold() {
@@ -16,6 +18,10 @@ export const ProductService = {
     },
     async getNewest() {
         const response = await $axios.get(EndPointes.product.getNewest);
+        return response;
+    },
+    async getOne(id: string) {
+        const response = await $axios.get(EndPointes.product.getOne + id);
         return response;
     },
 };
