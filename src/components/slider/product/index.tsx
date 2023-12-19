@@ -1,7 +1,7 @@
 import { CustomButton, ProductCard } from '@/ui';
 import { SlideNav } from '@/ui/slide-nav';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
-import { Text } from '@chakra-ui/react';
+import { Skeleton, Text } from '@chakra-ui/react';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import 'swiper/css';
@@ -14,16 +14,22 @@ import * as S from './styled';
 export const ProductSlider = (props: ProductSliderProps) => {
 	const prevRef = useRef(null);
 	const nextRef = useRef(null);
+	const loading = false;
+
 	return (
 		<S.ProductsCarousel>
 			<S.Top>
-				<Text fontSize={{ sm: 22, md: 24, lg: 28 }} fontStyle={'normal'} fontWeight={'bolder'} variant='h1'>
-					{props.title}
-				</Text>
+				<Skeleton height={'24px'} isLoaded={loading}>
+					<Text fontSize={{ sm: 22, md: 24, lg: 28 }} fontStyle={'normal'} fontWeight={'bolder'} variant='h1'>
+						{props.title}
+					</Text>
+				</Skeleton>
 
-				<Link to='/'>
-					<CustomButton text='See all' image={<ArrowForwardIcon />} gap={2} />
-				</Link>
+				<Skeleton height={'24px'} isLoaded={loading}>
+					<Link to='/'>
+						<CustomButton text='See all' image={<ArrowForwardIcon />} gap={2} />
+					</Link>
+				</Skeleton>
 			</S.Top>
 			<S.Carousel>
 				<Swiper
