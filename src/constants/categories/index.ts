@@ -1,1 +1,1 @@
-export { categories, nav } from './all';
+export * from './all';

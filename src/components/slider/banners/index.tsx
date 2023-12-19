@@ -6,6 +6,8 @@ import { Skeleton, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import * as S from './styled';
+import { useTypedSelector } from '@/hooks';
+import { BASE_URL } from '@/constants';
 
 export interface ProductBannersProps {
 	titles: string;
@@ -13,12 +15,12 @@ export interface ProductBannersProps {
 }
 
 export const ProductsBanners = ({ titles, categories }: ProductBannersProps) => {
-	const loading = false;
+	const loading = !useTypedSelector(state => state.category.loading.get);
 	const bannersItems = categories.map(({ id, title, categoty_image }) => {
 		return (
 			<SwiperSlide key={id}>
 				<Skeleton isLoaded={loading} borderRadius={'10px'}>
-					<S.Banner style={{ backgroundImage: `url(${CategoryThumb})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right' }}>
+					<S.Banner style={{ backgroundImage: `url(${categoty_image ? `${BASE_URL}/uploads/${categoty_image}` : CategoryThumb})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right', backgroundSize: 100 }}>
 						<Text variant='h2' as='h4' fontSize={26} fontWeight={'bolder'}>
 							{title}
 						</Text>
