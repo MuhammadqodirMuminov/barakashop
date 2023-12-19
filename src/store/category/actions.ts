@@ -8,8 +8,9 @@ export const getAllCategory = createAsyncThunk<any, IArgCategory>(
   async ({ callback }, thunkApi) => {
     try {
       const response = await CategoryService.getAll();
+
       if (response.data) {
-        callback(response.data);
+        return response.data
       }
     } catch (error) {
       addNotification(error);

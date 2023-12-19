@@ -1,4 +1,4 @@
-import { IStoreLoadings } from './types';
+import { ICategoryStore, IStoreLoadings } from './types';
 
 export const loadings: IStoreLoadings = {
     get: 'get',

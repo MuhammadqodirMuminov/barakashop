@@ -16,7 +16,7 @@ export const Home = () => {
 		getNewestProduct({});
 		getAllAds({});
 	}, []);
-	
+
 	return (
 		<S.Main>
 			<S.Top>
