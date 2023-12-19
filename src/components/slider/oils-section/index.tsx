@@ -25,7 +25,6 @@ interface Product {
 
 export const ProductsOilsSection = () => {
 	const loading: boolean = !useTypedSelector(state => state.product.loading.getAll);
-
 	const oils: Product[] = [
 		{
 			id: 1,
