@@ -1,4 +1,4 @@
-import { IStoreLoadings } from './types';
+import { ICategoryStore, IStoreLoadings } from './types';
 
 export const loadings: IStoreLoadings = {
   get: 'get',
@@ -7,6 +7,6 @@ export const loadings: IStoreLoadings = {
   delete: 'delete',
 };
 
-export const SliceNames = {
+export const SliceNames: ICategoryStore = {
 	category: 'category',
 };

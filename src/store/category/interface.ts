@@ -4,7 +4,7 @@ export interface ICategoryState {
   loading: {
     get: boolean;
   };
-  categories: ICategory[] | null;
+  categories: any;
   errors: null | string | string[];
 }
 export interface IAuthResponseCategory extends ICategory {}

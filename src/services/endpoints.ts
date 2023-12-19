@@ -4,6 +4,6 @@ export const EndPointes = {
 		getme: '/auth/getme',
 	},
 	category: {
-		getAll: '/category/all'
+		getAll: '/category/get-all'
 	}
 };

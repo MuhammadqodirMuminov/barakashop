@@ -4,3 +4,8 @@ export interface IStoreLoadings {
   put: string;
   delete: string;
 }
+
+export interface ICategoryStore {
+  category: string
+}
+

@@ -1,8 +1,12 @@
 import { MainSlider, ProductSlider, ProductsBanners, ProductsOilsSection } from '@/components';
 import { products } from '@/constants';
 import * as S from './styled';
+import { useTypedSelector } from '@/hooks';
 
 export const Home = () => {
+	const { loading, categories } = useTypedSelector((state) => state.category);
+
+  console.log(categories);
 	return (
 		<S.Main>
 			<S.Top>
