@@ -5,14 +5,18 @@ import * as S from './styled';
 import { productImg } from '@/assets';
 import { SliderMaskTabletBg, SliderMuskBg, SliderMuskMobileBg } from '@/ui';
 import { SlideNav } from '@/ui/slide-nav';
-import { Heading, Image, Text } from '@chakra-ui/react';
+import { Heading, Image, Skeleton, Text } from '@chakra-ui/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import { MainSliderProps } from './props';
+import { IAds } from '@/types';
+import { useTypedSelector } from '@/hooks';
 
 export { SlideNav };
 
-export const MainSlider = ({ ads }: any) => {
+export const MainSlider = ({ ads }: MainSliderProps) => {
 	const prevRef = useRef(null);
 	const nextRef = useRef(null);
+	const loading = !useTypedSelector(state => state.ads.loading.getAll);
 
 	return (
 		<S.MainSlider>
@@ -31,36 +35,38 @@ export const MainSlider = ({ ads }: any) => {
 					navigation.update();
 				}}
 			>
-				{ads?.map((item: any, i: any) => (
+				{ads?.map((item: IAds, i: any) => (
 					<SwiperSlide key={i}>
-						<S.Slide>
-							<S.SlideLeft>
-								<Heading variant='h1' fontSize={{ sm: 28, md: 32, xl: 36 }}>
-									{item.ads_title}
-									<S.Discount>{item.ads_persent}%</S.Discount>
-								</Heading>
+						<Skeleton isLoaded={loading} borderRadius={'20px'}>
+							<S.Slide>
+								<S.SlideLeft>
+									<Heading variant='h1' fontSize={{ sm: 28, md: 32, xl: 36 }}>
+										{item.ads_title}
+										<S.Discount>{item.ads_persent}%</S.Discount>
+									</Heading>
 
-								<Text fontSize={{ sm: 13, md: 20, }} variant='h4'>
-									{item.ads_description}
-								</Text>
-							</S.SlideLeft>
+									<Text fontSize={{ sm: 13, md: 20, }} variant='h4'>
+										{item.ads_description}
+									</Text>
+								</S.SlideLeft>
 
-							<S.SlideImg>
-								<Image src={productImg} alt='product' />
-							</S.SlideImg>
+								<S.SlideImg>
+									<Image src={productImg} alt='product' />
+								</S.SlideImg>
 
-							<S.BackgroundDesk>
-								<SliderMuskBg />
-							</S.BackgroundDesk>
+								<S.BackgroundDesk>
+									<SliderMuskBg />
+								</S.BackgroundDesk>
 
-							<S.BackgroundTablet>
-								<SliderMaskTabletBg />
-							</S.BackgroundTablet>
+								<S.BackgroundTablet>
+									<SliderMaskTabletBg />
+								</S.BackgroundTablet>
 
-							<S.BackgroundMobile>
-								<SliderMuskMobileBg />
-							</S.BackgroundMobile>
-						</S.Slide>
+								<S.BackgroundMobile>
+									<SliderMuskMobileBg />
+								</S.BackgroundMobile>
+							</S.Slide>
+						</Skeleton>
 					</SwiperSlide>
 				))}
 
