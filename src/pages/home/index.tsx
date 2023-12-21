@@ -1,18 +1,31 @@
 import { MainSlider, ProductSlider, ProductsBanners, ProductsOilsSection } from '@/components';
-import { products } from '@/constants';
+import { products as tempProducts, tempAds, tempCategories,  } from '@/constants';
 import * as S from './styled';
+import { useActions, useTypedSelector } from '@/hooks';
+import { useEffect } from 'react';
 
 export const Home = () => {
+	const { getAllAds, getAllProduct, getRecomendedProduct, getFrequentlyProduct, getNewestProduct, getAllCategory } = useActions();
+	const { recomendedProducts, frequentlyProducts, newestProducts } = useTypedSelector(state => state.product);
+	const { ads } = useTypedSelector(state => state.ads);
+	const { categories } = useTypedSelector(state => state.category);
+	
+	useEffect(() => {
+		getAllProduct({});
+		getRecomendedProduct({});
+		getFrequentlyProduct({});
+		getNewestProduct({});
+		getAllAds({});
+		getAllCategory({})
+	}, []);
+console.log(categories);
+
 	return (
 		<S.Main>
 			<S.Top>
 				<S.WrapperSlide>
 					<MainSlider
-						ads={[
-							{ id: 1, ads_title: 'Qaynoq yozda qaynoq aksiyalar', ads_persent: '30', ads_description: 'Olingan har bir mahsulot uchun 30% chegirma.' },
-							{ id: 1, ads_title: 'Qaynoq yozda qaynoq aksiyalar', ads_persent: '30', ads_description: 'Olingan har bir mahsulot uchun 30% chegirma.' },
-							{ id: 1, ads_title: 'Qaynoq yozda qaynoq aksiyalar', ads_persent: '30', ads_description: 'Olingan har bir mahsulot uchun 30% chegirma.' },
-						]}
+						ads={ads || tempAds}
 					/>
 				</S.WrapperSlide>
 			</S.Top>
@@ -21,21 +34,14 @@ export const Home = () => {
 				<S.WrapperSlide>
 					<ProductsOilsSection />
 
-					<ProductsBanners
-						titles='Top categories'
-						categories={[
-							{ id: 1, title: 'Catgory1', categoty_image: '' },
-							{ id: 1, title: 'Catgory1', categoty_image: '' },
-							{ id: 1, title: 'Catgory1', categoty_image: '' },
-							{ id: 1, title: 'Catgory1', categoty_image: '' },
-						]}
-					/>
+					<ProductsBanners titles='Top categories' categories={categories || tempCategories} />
 
-					<ProductSlider items={products} title={'Friquendly Sold'} />
+					<ProductSlider items={recomendedProducts || tempProducts} title={'Recomended products'} />
 
-					<ProductSlider items={products} title={'New Products'} />
+					<ProductSlider items={frequentlyProducts || tempProducts} title={'Frequently Sold'} />
 
-					<ProductSlider items={products} title={'Discounded products'} />
+					<ProductSlider items={newestProducts || tempProducts} title={'New Products'} />
+
 				</S.WrapperSlide>
 			</S.Sections>
 		</S.Main>

@@ -12,7 +12,7 @@ import { Phone } from "../phone";
 import { ShoppingCartLink } from "../shopping-cart-link";
 import { UserEntry } from "../user-entry";
 import * as S from "./styled";
-import close_icon from '@/assets/icons/close.svg'
+import close_icon from "@/assets/icons/close.svg";
 
 interface HamburgerMenuProps {
   nav: NavItem[];
@@ -22,7 +22,7 @@ export const HamburgerMenu = ({ nav }: HamburgerMenuProps) => {
   const navItems = nav.map(({ label, link }) => {
     return (
       <S.MenuNavItem key={link}>
-        <Link  to={"/"}>
+        <Link to={"/"}>
           <S.MenuNavLink>{label}</S.MenuNavLink>
         </Link>
       </S.MenuNavItem>
@@ -30,6 +30,8 @@ export const HamburgerMenu = ({ nav }: HamburgerMenuProps) => {
   });
 
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+ 
 
   return (
     <S.HamburgerMenu>
@@ -44,7 +46,7 @@ export const HamburgerMenu = ({ nav }: HamburgerMenuProps) => {
         <DrawerContent>
           <S.MenuTop>
             <S.HamburgerButton onClick={onClose}>
-             <img src={close_icon} alt="close icon" />
+              <img src={close_icon} alt="close icon" />
             </S.HamburgerButton>
             <UserEntry />
           </S.MenuTop>

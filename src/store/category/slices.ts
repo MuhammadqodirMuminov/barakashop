@@ -1,46 +1,49 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { SliceNames } from '../constants';
-import { getAllCategories } from './actions';
-import { InitialState } from './interface';
+import { getAllCategory } from './actions';
+import { ICategoryState } from './interface';
 
-const initialState: InitialState = {
+const initialState: ICategoryState = {
 	loading: {
 		get: false,
 	},
 	categories: null,
-	error: null,
+	errors: null,
 };
 
 const categorySlice = createSlice({
 	name: SliceNames.category,
 	initialState,
 	reducers: {
-		categoryLoading: state => {
+		setCategoryLoading: state => {
 			state.loading.get = true;
-			state.error = null;
+			state.errors = null;
 		},
-		categorySuccess: (state, { payload }) => {
-			(state.loading.get = false), (state.categories = payload);
+		setCategory: (state, { payload }) => {
+			state.loading.get = false;
+			state.categories = payload;
+			state.errors = null;
 		},
 
-		categoryFailed: (state, { payload }) => {
-			state.error = payload;
+		setCategoryFailed: (state, { payload }) => {
+			state.loading.get = false;
+			state.errors = payload;
 		},
 	},
 	extraReducers: builder => {
 		builder
-			.addCase(getAllCategories.pending, state => {
+			.addCase(getAllCategory.pending, state => {
 				state.loading.get = true;
-				state.error = null;
+				state.errors = null;
 			})
-			.addCase(getAllCategories.fulfilled, (state, { payload }) => {
-				state.error = null;
-				state.categories = payload;
+			.addCase(getAllCategory.fulfilled, (state, { payload }) => {
 				state.loading.get = false;
+				state.categories = payload.data;
+				state.errors = null;
 			})
-			.addCase(getAllCategories.rejected, (state, { payload }) => {
-				state.error = payload;
+			.addCase(getAllCategory.rejected, (state, { payload }) => {
 				state.loading.get = false;
+				state.errors = payload as string;
 			});
 	},
 });

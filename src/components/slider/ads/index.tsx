@@ -7,13 +7,16 @@ import { SliderMaskTabletBg, SliderMuskBg, SliderMuskMobileBg } from '@/ui';
 import { SlideNav } from '@/ui/slide-nav';
 import { Heading, Image, Skeleton, Text } from '@chakra-ui/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import { MainSliderProps } from './props';
+import { IAds } from '@/types';
+import { useTypedSelector } from '@/hooks';
 
 export { SlideNav };
 
-export const MainSlider = ({ ads }: any) => {
+export const MainSlider = ({ ads }: MainSliderProps) => {
 	const prevRef = useRef(null);
 	const nextRef = useRef(null);
-	const loading = false;
+	const loading = !useTypedSelector(state => state.ads.loading.getAll);
 
 	return (
 		<S.MainSlider>
@@ -32,7 +35,7 @@ export const MainSlider = ({ ads }: any) => {
 					navigation.update();
 				}}
 			>
-				{ads?.map((item: any, i: any) => (
+				{ads?.map((item: IAds, i: any) => (
 					<SwiperSlide key={i}>
 						<Skeleton isLoaded={loading} borderRadius={'20px'}>
 							<S.Slide>
