@@ -1,3 +1,3 @@
-import { PageLayout } from './Page/Page';
+import { PageLayout } from './page';
 
 export { PageLayout };

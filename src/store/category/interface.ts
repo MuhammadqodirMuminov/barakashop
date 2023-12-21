@@ -6,4 +6,6 @@ export interface InitialState {
 	error: null | string | unknown;
 }
 
-export interface IAuthResponse {}
+export interface ICategoryArgs {
+	callback: () => void
+}

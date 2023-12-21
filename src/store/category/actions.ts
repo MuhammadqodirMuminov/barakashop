@@ -1,13 +1,13 @@
+import { CategoryService } from '@/services/category';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { addNotification, errorCatch } from '../../utils';
-import { IAuthResponse } from './interface';
-import { CategoryService } from '@/services/category';
+import { ICategoryArgs } from './interface';
 
-export const Category = createAsyncThunk<IAuthResponse>('category/all', async ({ callback }, thunkApi) => {
+export const getAllCategories = createAsyncThunk<any, ICategoryArgs>('category/all', async ({ callback }, thunkApi) => {
 	try {
 		const response = await CategoryService.getAll();
 		if (response.data) {
-			callback(response.data);
+			callback();
 		}
 		return response.data;
 	} catch (error) {
