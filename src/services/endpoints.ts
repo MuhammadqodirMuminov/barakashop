@@ -16,4 +16,7 @@ export const EndPointes = {
     ads: {
         getAll: '/ads/get-all',
     },
+    detail: {
+        getDetail: `/product/get-one/`
+    }
 };

@@ -19,11 +19,11 @@ interface HamburgerMenuProps {
 }
 
 export const HamburgerMenu = ({ nav }: HamburgerMenuProps) => {
-  const navItems = nav.map(({ label, link }) => {
+  const navItems = nav?.map((item) => {
     return (
-      <S.MenuNavItem key={link}>
+      <S.MenuNavItem key={item.id}>
         <Link to={"/"}>
-          <S.MenuNavLink>{label}</S.MenuNavLink>
+          <S.MenuNavLink>{item.title}</S.MenuNavLink>
         </Link>
       </S.MenuNavItem>
     );

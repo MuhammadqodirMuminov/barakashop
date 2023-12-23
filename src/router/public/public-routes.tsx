@@ -5,7 +5,7 @@ import { IRoutesProps } from '../type';
 
 export const PublicRoutes = ({ isAuth }: IRoutesProps) =>
 	isAuth ? (
-		<Navigate to={ROUTES.home} />
+		<Navigate to={ROUTES.seller} />
 	) : (
 		<Content>
 			<Outlet />

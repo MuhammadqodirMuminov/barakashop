@@ -19,7 +19,7 @@ export const ProductService = {
         return response;
     },
     async getOne(id: string) {
-        const response = await $axios.get(EndPointes.product.getOne + id);
+        const response = await $axios.get(EndPointes.product.getOne + id);        
         return response;
     },
 };

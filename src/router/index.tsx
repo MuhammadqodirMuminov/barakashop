@@ -4,6 +4,7 @@ import { Routes } from './router';
 
 export const Router = () => {
 	const { isAuth, isInitiated } = useBootstrap();
+	console.log(isAuth);
 
 	if (isInitiated) {
 		return <Loading />;

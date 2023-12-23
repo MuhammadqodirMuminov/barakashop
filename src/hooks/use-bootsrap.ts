@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
+import { useTypedSelector } from '.';
 import { getFromLocalstorage, getTokens } from '../helpers';
 import { addNotification } from '../utils';
 import { useActions } from './use-actions';
 
 export function useBootstrap() {
 	const { setAuth, setToken, logout, setUser } = useActions();
-	// const { isAuth } = useTypedSelector(state => state.auth);
+	const { isAuth } = useTypedSelector(state => state.auth);
 	const [isInitiated, setIsInitiated] = useState(true);
-	const isAuth = true;
 
 	const user = getFromLocalstorage('user');
 	const accessToken = getTokens().accessToken;

@@ -30,44 +30,6 @@ export const Routes = ({ isAuth }: IRoutesProps) =>
 			element: <ProtectedRoutes isAuth={isAuth} />,
 			children: [
 				{
-					path: ROUTES.home,
-					element: <PageLayout />,
-					children: [
-						{
-							path: ROUTES.home,
-							element: (
-								<Suspense fallback={<Loading />}>
-									<Home />
-								</Suspense>
-							),
-						},
-						{
-							path: ROUTES.category,
-							element: (
-								<Suspense fallback={<Loading />}>
-									<CaregoryPage />
-								</Suspense>
-							),
-						},
-						{
-							path: ROUTES.detail,
-							element: (
-								<Suspense fallback={<Loading />}>
-									<DetailPage />
-								</Suspense>
-							),
-						},
-						{
-							path: ROUTES.searchResult,
-							element: (
-								<Suspense fallback={<Loading />}>
-									<SearchResult />
-								</Suspense>
-							),
-						},
-					],
-				},
-				{
 					path: ROUTES.seller,
 					element: <SellerLayout />,
 					children: [
@@ -169,6 +131,44 @@ export const Routes = ({ isAuth }: IRoutesProps) =>
 		{
 			element: <PublicRoutes isAuth={isAuth} />,
 			children: [
+				{
+					path: ROUTES.home,
+					element: <PageLayout />,
+					children: [
+						{
+							path: ROUTES.home,
+							element: (
+								<Suspense fallback={<Loading />}>
+									<Home />
+								</Suspense>
+							),
+						},
+						{
+							path: ROUTES.category,
+							element: (
+								<Suspense fallback={<Loading />}>
+									<CaregoryPage />
+								</Suspense>
+							),
+						},
+						{
+							path: ROUTES.detail,
+							element: (
+								<Suspense fallback={<Loading />}>
+									<DetailPage />
+								</Suspense>
+							),
+						},
+						{
+							path: ROUTES.searchResult,
+							element: (
+								<Suspense fallback={<Loading />}>
+									<SearchResult />
+								</Suspense>
+							),
+						},
+					],
+				},
 				{
 					path: ROUTES.signIn,
 					element: (

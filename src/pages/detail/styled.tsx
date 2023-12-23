@@ -1,6 +1,8 @@
 import { Wrapper, media } from '@/styled';
 import styled from 'styled-components';
 
+
+
 export { Wrapper };
 export const SingleWrapper = styled.div`
 	display: flex;
@@ -8,7 +10,7 @@ export const SingleWrapper = styled.div`
 	padding: 20px 0;
 	gap: 40px;
 
-	${media.laptop} {
+	${media.tablet} {
 		flex-direction: column;
 		margin: 0px auto;
 		gap: 10px;

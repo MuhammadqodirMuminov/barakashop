@@ -46,7 +46,7 @@ export const HeaderTop = ({ nav }: HeaderTopProps) => {
 					<UserEntry />
 
 					<S.UserEntryMobile>
-						<Link to={'/'}>
+						<Link to={'/sign-in'}>
 							<img src={UserIcon} alt='' />
 						</Link>
 					</S.UserEntryMobile>
