@@ -4,7 +4,9 @@ export const EndPointes = {
         getme: '/auth/getme',
     },
     category: {
+        getOne: '/category/get-one/',
         getAll: '/category/get-all',
+        getRecomended: '/category/get-all?recommendation=true',
     },
     product: {
         getAll: '/product/get-all',

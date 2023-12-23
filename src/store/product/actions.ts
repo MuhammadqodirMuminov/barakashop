@@ -1,5 +1,5 @@
 import { ProductService } from '@/services';
-import { addNotification, errorCatch } from '@/utils';
+import { errorCatch } from '@/utils';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { IArgProduct, IResponseOneProduct, IResponseProduct } from './interface';
 import { EndPointes } from '@/services/endpoints';
@@ -11,7 +11,6 @@ export const getAllProduct = createAsyncThunk<IResponseProduct, IArgProduct>(End
             return response.data;
         }
     } catch (error) {
-            addNotification(error);
             return thunkApi.rejectWithValue({ error: errorCatch(error) });
         }
     }
@@ -24,7 +23,6 @@ export const getRecomendedProduct = createAsyncThunk<IResponseProduct, IArgProdu
             return response.data;
         }
     } catch (error) {
-        addNotification(error);
         return thunkApi.rejectWithValue({ error: errorCatch(error) });
     }
 });
@@ -36,7 +34,6 @@ export const getFrequentlyProduct = createAsyncThunk<IResponseProduct, IArgProdu
             return response.data;
         }
     } catch (error) {
-        addNotification(error);
         return thunkApi.rejectWithValue({ error: errorCatch(error) });
     }
 });
@@ -48,7 +45,6 @@ export const getNewestProduct = createAsyncThunk<IResponseProduct, IArgProduct>(
                 return response.data;
             }
         } catch (error) {
-            addNotification(error);
             return thunkApi.rejectWithValue({ error: errorCatch(error) });
         }
     }
@@ -63,7 +59,6 @@ export const getOneProduct = createAsyncThunk<IResponseOneProduct, IArgProduct>(
                 return response.data;
             }
         } catch (error) {
-            addNotification(error);
             return thunkApi.rejectWithValue({ error: errorCatch(error) });
         }
     }

@@ -1,16 +1,28 @@
-import { ICategory } from './../../types/category-types';
+import { ICategory } from '@/types';
 
 export interface ICategoryState {
-	loading: {
-		get: boolean;
-	};
-	categories: ICategory[] | null;
-	errors: null | string | string[];
+    loading: {
+        getOne: boolean;
+        get: boolean;
+        getRecomended: boolean;
+    };
+    categories: ICategory[] | null;
+    recomendedCategory: ICategory | null;
+    oneCategory: ICategory | null;
+    errors: null | string | string[];
 }
 export interface IResponseCategory {
-	status: number;
-	data: ICategory[];
-	message: string;
+    status: number;
+    data: ICategory[];
+    message: string;
 }
 
-export interface IArgCategory {}
+export interface IResponseOneCategory {
+    status: number;
+    data: ICategory;
+    message: string;
+}
+
+export interface IArgCategory {
+    id?: string;
+}
