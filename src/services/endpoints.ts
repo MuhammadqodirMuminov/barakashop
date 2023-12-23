@@ -1,6 +1,6 @@
 export const EndPointes = {
     auth: {
-        signIn: '/auth/login',
+        signIn: '/auth/admin/login',
         getme: '/auth/getme',
     },
     category: {

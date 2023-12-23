@@ -209,3 +209,9 @@ export function TelegramIcon() {
 		<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24.002 44C12.9563 44 4.00195 35.0456 4.00195 24C4.00195 12.9543 12.9563 4 24.002 4C35.0476 4 44.002 12.9543 44.002 24C44.002 35.0456 35.0476 44 24.002 44ZM17.7823 26.3416L17.8076 26.3256C18.967 30.1534 19.5467 32.0674 19.5467 32.0674C19.7713 32.6884 20.08 32.7992 20.4546 32.7486C20.829 32.6978 21.0278 32.4952 21.2722 32.2594C21.2722 32.2594 22.0648 31.4944 23.65 29.9646L28.7518 33.7396C29.6814 34.2532 30.3526 33.9882 30.5834 32.8754L33.899 17.2328C34.265 15.7768 33.623 15.1929 32.494 15.6551L13.0279 23.1742C11.6999 23.708 11.7063 24.451 12.7862 24.7822L17.7823 26.3416Z" fill="black"></path></svg>
 	)
 }
+
+export function LoadingIcon() {
+	return(
+		<svg viewBox="0 0 48 30" width="48px" height="30px"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><g transform="translate(9.5,19)"><circle r="9" stroke-dasharray="56.549 56.549"></circle><g stroke-dasharray="31.416 31.416" stroke-dashoffset="-23.562"><circle r="5"></circle><circle r="5" transform="rotate(180,0,0)"></circle></g></g><g transform="translate(24,19)"><g stroke-dasharray="25.133 25.133" stroke-dashoffset="-21.991" transform="rotate(67.5,0,0)"><circle r="4"></circle><circle r="4" transform="rotate(180,0,0)"></circle></g></g><g transform="translate(38.5,19)"><circle r="9" stroke-dasharray="56.549 56.549"></circle><g stroke-dasharray="31.416 31.416" stroke-dashoffset="-23.562"><circle r="5"></circle><circle r="5" transform="rotate(180,0,0)"></circle></g></g><polyline points="14 3,18 3" stroke-dasharray="5 5"></polyline><polyline points="16 3,24 19,9.5 19,18 8,34 7,24 19" stroke-dasharray="79 79"></polyline><path d="m30,2h6s1,0,1,1-1,1-1,1" stroke-dasharray="10 10"></path><polyline points="32.5 2,38.5 19" stroke-dasharray="19 19"></polyline></g></svg>
+	)
+}

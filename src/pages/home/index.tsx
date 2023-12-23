@@ -6,9 +6,10 @@ import { useEffect } from 'react';
 
 export const Home = () => {
 	const { getAllAds, getAllProduct, getRecomendedProduct, getFrequentlyProduct, getNewestProduct, getAllCategory } = useActions();
-	const { recomendedProducts, frequentlyProducts, newestProducts } = useTypedSelector(state => state.product);
-	const { ads } = useTypedSelector(state => state.ads);
-	const { categories } = useTypedSelector(state => state.category);
+	const state = useTypedSelector(state => state);
+	const { recomendedProducts, frequentlyProducts, newestProducts } = state.product;
+	const { ads } = state.ads;
+	const { categories } = state.category;
 	
 	useEffect(() => {
 		getAllProduct({});
@@ -18,15 +19,12 @@ export const Home = () => {
 		getAllAds({});
 		getAllCategory({})
 	}, []);
-console.log(categories);
 
 	return (
 		<S.Main>
 			<S.Top>
 				<S.WrapperSlide>
-					<MainSlider
-						ads={ads || tempAds}
-					/>
+					<MainSlider ads={ads || tempAds} />
 				</S.WrapperSlide>
 			</S.Top>
 

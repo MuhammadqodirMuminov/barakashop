@@ -7,6 +7,7 @@ import {
     SafetyBeltIcon,
 } from '@/assets';
 import { NavItem } from '@/layouts/user-layout/header/types';
+import { ICategory } from '@/types';
 
 export const categories = [
     {
@@ -81,9 +82,9 @@ export const nav: NavItem[] = [
     { label: 'Contacts', link: '/' },
 ];
 
-export const tempCategories = [
-    { id: 1, title: 'Catgory1', categoty_image: '' },
-    { id: 1, title: 'Catgory1', categoty_image: '' },
-    { id: 1, title: 'Catgory1', categoty_image: '' },
-    { id: 1, title: 'Catgory1', categoty_image: '' },
+export const tempCategories: ICategory[] = [
+    { id: 1, title: 'Category 1', categoty_image: '' },
+    { id: 2, title: 'Category 2', categoty_image: '' },
+    { id: 3, title: 'Category 3', categoty_image: '' },
+    { id: 4, title: 'Category 4', categoty_image: '' },
 ];

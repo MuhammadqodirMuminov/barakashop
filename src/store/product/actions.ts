@@ -6,7 +6,7 @@ import { EndPointes } from '@/services/endpoints';
 
 export const getAllProduct = createAsyncThunk<IResponseProduct, IArgProduct>(EndPointes.product.getAll, async (_, thunkApi) => {
     try {
-        const response = await ProductService.getAll();
+        const response = await ProductService.getAll();        
         if (response.data) {
             return response.data;
         }
