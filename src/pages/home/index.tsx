@@ -18,7 +18,6 @@ export const Home = () => {
 		getAllAds({});
 		getAllCategory({})
 	}, []);
-console.log(categories);
 
 	return (
 		<S.Main>

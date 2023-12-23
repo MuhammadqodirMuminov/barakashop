@@ -54,7 +54,9 @@ export const getNewestProduct = createAsyncThunk<IResponseProduct, IArgProduct>(
     }
 );
 
-export const getOneProduct = createAsyncThunk<IResponseOneProduct, IArgProduct>(EndPointes.product.getOne,async ({ id }, thunkApi) => {
+export const getOneProduct = createAsyncThunk<IResponseOneProduct, IArgProduct>(EndPointes.product.getOne,async ( id , thunkApi) => {
+    console.log('ax',id);
+    
     const response = await ProductService.getOne(id as string);
         try {
             if (response.data) {

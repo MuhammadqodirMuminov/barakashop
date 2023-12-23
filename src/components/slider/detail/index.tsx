@@ -4,8 +4,13 @@ import { FreeMode, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { SlideNav } from '../ads';
 import './detail.swiper.css';
+import { BASE_URL } from '@/constants';
 
-export const DetailSlider = () => {
+export const DetailSlider = ({images}) => {
+
+	console.log(images);
+	
+
 	const prevRef = useRef(null);
 	const nextRef = useRef(null);
 	return (
@@ -23,18 +28,10 @@ export const DetailSlider = () => {
 				navigation.update();
 			}}
 		>
-			<SwiperSlide>
-				<img src={DetailImg} />
-			</SwiperSlide>
-			<SwiperSlide>
-				<img src='https://swiperjs.com/demos/images/nature-2.jpg' />
-			</SwiperSlide>
-			<SwiperSlide>
-				<img src='https://swiperjs.com/demos/images/nature-3.jpg' />
-			</SwiperSlide>
-			<SwiperSlide>
-				<img src='https://swiperjs.com/demos/images/nature-4.jpg' />
-			</SwiperSlide>
+			{images?.urls?.map(item => <><SwiperSlide>
+				<img key={item} src={`${BASE_URL}/uploads/${item}`} />
+			</SwiperSlide></>)}
+		
 			<SlideNav prevRef={prevRef} nextRef={nextRef} />
 		</Swiper>
 	);
