@@ -5,10 +5,10 @@ import { Outlet } from 'react-router-dom';
 import { Footer } from '../footer';
 import { Header } from '../header';
 export const PageLayout: FC<PropsWithChildren> = () => {
-	const { getAllCategories } = useActions();
+	const { getAllCategory } = useActions();
 
 	useEffect(() => {
-		getAllCategories({
+		getAllCategory({
 			callback: () => {
 				addNotification('Successfully get ALl categories');
 			},
