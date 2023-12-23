@@ -52,7 +52,7 @@ export const authSlice = createSlice({
 				state.isAuth = true;
 				state.loading.sign = false;
 				state.user = payload.data;
-				state.token = payload.access_token;
+				state.token = payload.accessToken;
 			})
 			.addCase(SignIn.rejected, (state, { payload }) => {
 				state.error = payload;

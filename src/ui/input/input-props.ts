@@ -1,7 +1,8 @@
 import { InputProps } from '@chakra-ui/react';
 
-export interface IInputProps {
-	type: string;
-	text: string;
-	props?: InputProps;
+export interface IInputProps extends InputProps {
+    type: string;
+    text: string;
+    placeholder: string;
+    mask?: boolean;
 }

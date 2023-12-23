@@ -1,31 +1,39 @@
+import { UserType } from '@/types';
 import { AxiosResponse } from 'axios';
 
 export interface InitialState {
-	user: any | null;
-	token: string | null;
-	isAuth: boolean;
-	loading: {
-		sign: boolean;
-	};
-	error: null | string | unknown;
+    user: any | null;
+    token: string | null;
+    isAuth: boolean;
+    loading: {
+        sign: boolean;
+    };
+    error: null | string | unknown;
 }
 
 export interface IAuthAxiosResponse extends AxiosResponse {}
 
 export interface IAuthResponse {
-	status: number;
-	message: string;
-	data: IAuthData;
-	refresh_token: string;
-	access_token: string;
+    status: number;
+    message: string;
+    data: IAuthData;
+    refreshToken: string;
+    accessToken: string;
 }
 
 export interface IAuthData {
-	// write fileds to this
+    id: number;
+    username: string;
+    role: UserType;
+    phone: string;
+    email: string;
+    telegram_chat_id: number;
+    avatar: string;
+    created_at: string;
 }
 
 export interface IAuthSignIn {
-	email: string;
-	password: string;
-	callback: (data: IAuthResponse) => void;
+    username: string;
+    password: string;
+    // callback: (data: IAuthResponse) => void;
 }
