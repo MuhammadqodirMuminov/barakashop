@@ -94,7 +94,6 @@ export const NavLinkItem = styled(NavLink)`
 
     &.active {
         color: #2997ff;
-        border-bottom: 2px solid #2997ff;
 
         svg {
             fill: red;

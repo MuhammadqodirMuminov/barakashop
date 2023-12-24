@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AuthService } from '@/services';
-import { errorCatch } from '@/utils';
+import { addNotification, errorCatch } from '@/utils';
 import { IAuthResponse, IAuthSignIn } from './interface';
 import { EndPointes } from '@/services/endpoints';
 
@@ -11,6 +11,7 @@ export const SignIn = createAsyncThunk<IAuthResponse, IAuthSignIn>(
             const response = await AuthService.signIn(username, password);
             return response.data;
         } catch (error) {
+            addNotification(error);
             return thunkApi.rejectWithValue({ error: errorCatch(error) });
         }
     }
