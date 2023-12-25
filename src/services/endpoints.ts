@@ -9,11 +9,12 @@ export const EndPointes = {
         getRecomended: '/category/get-all?recommendation=true',
     },
     product: {
+        getOne: 'product/get-one/',
         getAll: '/product/get-all',
         getRecomended: '/product/get-all?recommended=true',
         getFrequently: '/product/get-all?friquentlysold=true',
         getNewest: '/product/get-all/?newest=true',
-        getOne: 'product/get-one/',
+        getOnSale: '/product/get-all?onsale=true',
     },
     ads: {
         getAll: '/ads/get-all',
@@ -24,5 +25,6 @@ export const EndPointes = {
     oqim: {
         getAll: '/oqim/get-all',
         getOne: '/oqim/get-one/',
+        create: '/oqim/create',
     },
 };

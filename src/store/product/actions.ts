@@ -1,8 +1,21 @@
 import { ProductService } from '@/services';
 import { errorCatch } from '@/utils';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { IArgProduct, IResponseOneProduct, IResponseProduct } from './interface';
+import { IArgProduct, IOnSaleProductArg, IResponseOneProduct, IResponseProduct } from './interface';
 import { EndPointes } from '@/services/endpoints';
+
+
+export const getOneProduct = createAsyncThunk<IResponseOneProduct, IArgProduct>(EndPointes.product.getOne,async ( id , thunkApi) => {    
+    const response = await ProductService.getOne(id as string);
+        try {
+            if (response.data) {
+                return response.data;
+            }
+        } catch (error) {
+            return thunkApi.rejectWithValue({ error: errorCatch(error) });
+        }
+    }
+);
 
 export const getAllProduct = createAsyncThunk<IResponseProduct, IArgProduct>(EndPointes.product.getAll, async (_, thunkApi) => {
     try {
@@ -50,16 +63,13 @@ export const getNewestProduct = createAsyncThunk<IResponseProduct, IArgProduct>(
     }
 );
 
-export const getOneProduct = createAsyncThunk<IResponseOneProduct, IArgProduct>(EndPointes.product.getOne,async ( id , thunkApi) => {
-    console.log('ax',id);
-    
-    const response = await ProductService.getOne(id as string);
-        try {
-            if (response.data) {
-                return response.data;
-            }
-        } catch (error) {
-            return thunkApi.rejectWithValue({ error: errorCatch(error) });
+export const getOnSaleProduct = createAsyncThunk<IResponseProduct, IOnSaleProductArg>(EndPointes.product.getOnSale, async (body, thunkApi) => {
+    try {
+        const response = await ProductService.getOnSale(body);
+        if (response.data) {
+            return response.data;
         }
+    } catch (error) {
+        return thunkApi.rejectWithValue({ error: errorCatch(error) });
     }
-);
+})

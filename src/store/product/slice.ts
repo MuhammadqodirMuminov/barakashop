@@ -1,27 +1,30 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { SliceNames } from '../constants';
 import {
+    getOneProduct,
     getAllProduct,
     getFrequentlyProduct,
     getNewestProduct,
-    getOneProduct,
     getRecomendedProduct,
+    getOnSaleProduct,
 } from './actions';
 import { IProductState } from './interface';
 
 const initialState: IProductState = {
     loading: {
+        getOne: false,
         getAll: false,
         getRecomended: false,
         getFrequently: false,
         getNewest: false,
-        getOne: false,
+        getOnSale: false,
     },
+    oneProduct: null,
     products: null,
     recomendedProducts: null,
     frequentlyProducts: null,
     newestProducts: null,
-    oneProduct: null,
+    onSaleProducts: null,
     errors: null,
 };
 
@@ -46,6 +49,19 @@ const productSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
+            .addCase(getOneProduct.pending, (state) => {
+                state.loading.getOne = true;
+                state.errors = null;
+            })
+            .addCase(getOneProduct.fulfilled, (state, { payload }) => {
+                state.loading.getOne = false;
+                state.oneProduct = payload.data;
+                state.errors = null;
+            })
+            .addCase(getOneProduct.rejected, (state, { payload }) => {
+                state.loading.getOne = false;
+                state.errors = payload as string;
+            })
             .addCase(getAllProduct.pending, (state) => {
                 state.loading.getAll = true;
                 state.errors = null;
@@ -98,17 +114,17 @@ const productSlice = createSlice({
                 state.loading.getNewest = false;
                 state.errors = payload as string;
             })
-            .addCase(getOneProduct.pending, (state) => {
-                state.loading.getNewest = true;
+            .addCase(getOnSaleProduct.pending, (state) => {
+                state.loading.getOnSale = true;
                 state.errors = null;
             })
-            .addCase(getOneProduct.fulfilled, (state, { payload }) => {
-                state.loading.getOne = false;
-                state.oneProduct = payload.data;
+            .addCase(getOnSaleProduct.fulfilled, (state, { payload }) => {
+                state.loading.getOnSale = false;
+                state.onSaleProducts = payload.data;
                 state.errors = null;
             })
-            .addCase(getOneProduct.rejected, (state, { payload }) => {
-                state.loading.getOne = false;
+            .addCase(getOnSaleProduct.rejected, (state, { payload }) => {
+                state.loading.getOnSale = false;
                 state.errors = payload as string;
             });
     },

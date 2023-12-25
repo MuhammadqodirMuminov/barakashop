@@ -1,18 +1,21 @@
+import { IOnSaleProductQuery } from '@/services/product/types';
 import { IProductCard } from '@/types';
 
 export interface IProductState {
     loading: {
+        getOne: boolean;
         getAll: boolean;
         getRecomended: boolean;
         getFrequently: boolean;
         getNewest: boolean;
-        getOne: boolean;
+        getOnSale: boolean;
     };
+    oneProduct: IProductCard | null;
     products: IProductCard[] | null;
     recomendedProducts: IProductCard[] | null;
     frequentlyProducts: IProductCard[] | null;
     newestProducts: IProductCard[] | null;
-    oneProduct: IProductCard | null;
+    onSaleProducts: IProductCard[] | null;
     errors: null | string | string[];
 }
 export interface IResponseProduct {
@@ -29,3 +32,5 @@ export interface IResponseOneProduct {
 export interface IArgProduct {
     id?: string;
 }
+
+export interface IOnSaleProductArg extends IOnSaleProductQuery {}
