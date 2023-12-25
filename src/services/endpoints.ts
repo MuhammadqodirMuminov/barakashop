@@ -19,6 +19,10 @@ export const EndPointes = {
         getAll: '/ads/get-all',
     },
     detail: {
-        getDetail: `/product/get-one/`
-    }
+        getDetail: `/product/get-one/`,
+    },
+    oqim: {
+        getAll: '/oqim/get-all',
+        getOne: '/oqim/get-one/',
+    },
 };

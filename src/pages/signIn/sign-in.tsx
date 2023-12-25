@@ -5,7 +5,7 @@ import { InputField, PageTitle } from '@/ui';
 import { CustomButton } from '@/ui/button/custom';
 import { addNotification } from '@/utils';
 import { AdminLogin, AdminLoginWithPhoneNumber } from '@/validations';
-import { AtSignIcon, PhoneIcon } from '@chakra-ui/icons';
+import { LockIcon, PhoneIcon } from '@chakra-ui/icons';
 import { Box, Flex, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, useColorModeValue } from '@chakra-ui/react';
 import { Form, Formik, FormikValues } from 'formik';
 import { useNavigate } from 'react-router-dom';
@@ -47,7 +47,7 @@ export function SignIn() {
 					<Tabs isFitted variant='enclosed'>
 						<TabList mb='1em'>
 							<Tab gap={6}>
-								<AtSignIcon /> <span> password</span>
+								<LockIcon /> <span> password</span>
 							</Tab>
 							<Tab gap={6}>
 								<PhoneIcon /> phone
