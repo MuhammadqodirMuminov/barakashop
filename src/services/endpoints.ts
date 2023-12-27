@@ -25,6 +25,7 @@ export const EndPointes = {
     oqim: {
         getAll: '/oqim/get-all',
         getOne: '/oqim/get-one/',
+        getOneByUserId: '/oqim/get-one/by-user/',
         create: '/oqim/create',
     },
 };

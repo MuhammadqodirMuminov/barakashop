@@ -25,6 +25,7 @@ const initialState: IProductState = {
     frequentlyProducts: null,
     newestProducts: null,
     onSaleProducts: null,
+    selectProduct: null,
     errors: null,
 };
 
@@ -41,7 +42,9 @@ const productSlice = createSlice({
             state.products = payload;
             state.errors = null;
         },
-
+        setSelectProduct: (state, { payload }) => {
+            state.selectProduct = payload;
+        },
         setProductFailed: (state, { payload }) => {
             state.loading.getAll = false;
             state.errors = payload;

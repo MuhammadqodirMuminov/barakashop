@@ -1,11 +1,11 @@
 import { IProductCard } from '.';
 
 export interface ICategory {
-    id: 20;
+    id: number;
     title: string;
     description: string;
-    is_active: true;
     categoty_image: string;
+    is_active?: true;
     recommendation?: string;
     sort_order?: string;
     created_at?: string;

@@ -32,11 +32,11 @@ export const Header = () => {
             <S.Container>
                 <S.WrapperList>
                     <S.Item>
-                        <S.LinkItem to={ROUTES.seller}>SHOP</S.LinkItem>
+                        <S.LinkItem to={ROUTES.sellerDashboard}>SHOP</S.LinkItem>
                     </S.Item>
                     <S.SubWrapperList>
                         <S.SubItem>
-                            <S.NavLinkItem to={ROUTES.seller}>
+                            <S.NavLinkItem to={ROUTES.sellerDashboard}>
                                 {HeaderDashboardIcon()}
                                 <S.Span>Dashboard</S.Span>
                             </S.NavLinkItem>

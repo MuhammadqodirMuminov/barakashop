@@ -16,6 +16,7 @@ export interface IProductState {
     frequentlyProducts: IProductCard[] | null;
     newestProducts: IProductCard[] | null;
     onSaleProducts: IProductCard[] | null;
+    selectProduct: IProductCard | null;
     errors: null | string | string[];
 }
 export interface IResponseProduct {

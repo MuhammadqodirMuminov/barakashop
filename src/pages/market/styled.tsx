@@ -67,25 +67,30 @@ export const WrapperList = styled.ul`
 `;
 
 export const Item = styled.li`
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    height: -webkit-max-content;
+    height: max-content;
     word-wrap: break-word;
     background-clip: initial;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
-    display: flex;
-    flex-direction: column;
-    height: -webkit-max-content;
-    height: max-content;
-    min-width: 0;
-    position: relative;
 `;
 
 export const Box = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
     padding: 12px 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+
+    &:first-child{
+        padding: 0;
+    }
 `;
 
 export const LinkItem = styled(Link)`

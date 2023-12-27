@@ -28,7 +28,7 @@ export function SignIn() {
 
 			if (user) {
 				addNotification('Successfully signed in');
-				navigate(ROUTES.seller);
+				navigate(ROUTES.sellerDashboard);
 			}
 		} catch (error) {
 			addNotification(error);

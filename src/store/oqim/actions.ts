@@ -4,6 +4,7 @@ import {
     IArgOqim,
     ICreateOqimArg,
     IResponseOneOqim,
+    IResponseOneOqimByIdUser,
     IResponseOqim,
 } from './interface';
 import { errorCatch } from '@/utils';
@@ -14,6 +15,20 @@ export const getOneOqim = createAsyncThunk<IResponseOneOqim, IArgOqim>(
     async ({ id }, thunkApi) => {
         try {
             const response = await OqimService.getOne(id as string);
+            if (response.data) {
+                return response.data;
+            }
+        } catch (error) {
+            return thunkApi.rejectWithValue({ error: errorCatch(error) });
+        }
+    }
+);
+
+export const getOneOqimByUserId = createAsyncThunk<IResponseOneOqimByIdUser, IArgOqim>(
+    EndPointes.oqim.getOneByUserId,
+    async ({ id }, thunkApi) => {
+        try {
+            const response = await OqimService.getOneByUserId(id as string);
             if (response.data) {
                 return response.data;
             }
