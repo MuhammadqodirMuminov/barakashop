@@ -6,6 +6,8 @@ import * as CategoryAction from '../category/actions';
 import { CategorySliceActions } from '../category/slices';
 import * as ProductActions from '../product/actions';
 import { ProductSliceActions } from '../product/slice';
+import * as PaymentActions from '../payment/actions';
+import { PaymentSliceActions } from '../payment/slice';
 
 export const AllActions = {
 	...AuthSliceActions,
@@ -16,4 +18,6 @@ export const AllActions = {
 	...ProductSliceActions,
 	...AdsActions,
 	...AdsSliceActions,
+	...PaymentActions,
+	...PaymentSliceActions
 };

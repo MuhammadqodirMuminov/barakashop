@@ -18,5 +18,13 @@ export const EndPointes = {
     },
     detail: {
         getDetail: `/product/get-one/`
+    },
+    payment: {
+        getAll: '/payment/get-all',
+        getOne: '/payment/get-one',
+        create: "/payment/create"
+    },
+    profile: {
+        editPassword: "/user/update/password/"
     }
 };

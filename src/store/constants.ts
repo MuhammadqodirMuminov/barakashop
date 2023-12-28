@@ -1,4 +1,4 @@
-import { ICategoryStore, IStoreLoadings } from './types';
+import { IStoreLoadings } from './types';
 
 export const loadings: IStoreLoadings = {
     get: 'get',
@@ -11,4 +11,5 @@ export const SliceNames = {
     ads: 'ads',
     category: 'category',
     product: 'product',
+    payment: 'payment'
 };

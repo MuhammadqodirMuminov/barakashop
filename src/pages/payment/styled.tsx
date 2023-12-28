@@ -109,7 +109,7 @@ export const FormControlInput = styled.input`
   appearance: none;
   background-clip: padding-box;
   background-color: #fff;
-  border: var(--bs-border-width) solid var(--bs-border-color);
+  border: 1px solid #d7e1ea;
   border-radius: 0.3rem;
   display: block;
   font-size: 1rem;
@@ -185,3 +185,9 @@ export const RcTable = styled.div`
     background-color: #f0f4f8;
   }
 `;
+
+export const NoDataTable = styled.div`
+display: grid;
+    place-items: center;
+    width: 100%;
+`
