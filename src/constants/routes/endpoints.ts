@@ -2,7 +2,7 @@ export const ROUTES = {
 	signIn: '/sign-in',
 	home: '/',
 	seller: '/seller',
-	sellerHome: '/seller/home',
+	sellerDashboard: '/seller/dashboard',
 	sellerMarket: '/seller/market',
 	sellerOqim: '/seller/oqim',
 	sellerStatistics: '/seller/statistics',

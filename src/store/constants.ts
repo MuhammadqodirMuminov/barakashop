@@ -11,5 +11,6 @@ export const SliceNames = {
     ads: 'ads',
     category: 'category',
     product: 'product',
-    payment: 'payment'
+    payment: 'payment',
+    oqim: 'oqim',
 };

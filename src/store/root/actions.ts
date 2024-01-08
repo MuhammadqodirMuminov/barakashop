@@ -19,5 +19,5 @@ export const AllActions = {
 	...AdsActions,
 	...AdsSliceActions,
 	...PaymentActions,
-	...PaymentSliceActions
+	...PaymentSliceActions,
 };

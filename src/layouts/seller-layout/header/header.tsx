@@ -8,18 +8,35 @@ import {
     HeaderProfileIcon,
     HeaderStatists,
 } from '@/ui';
+import {
+    Button,
+    Popover,
+    PopoverArrow,
+    PopoverCloseButton,
+    PopoverContent,
+    PopoverTrigger,
+    Portal,
+    Text,
+} from '@chakra-ui/react';
+import {useActions} from '@/hooks'
 
 export const Header = () => {
+    const { logout } = useActions()
+    const handleLogout = () => {
+        logout();
+        location.replace(ROUTES.home);
+    };
+
     return (
         <S.Header>
             <S.Container>
                 <S.WrapperList>
                     <S.Item>
-                        <S.LinkItem to={ROUTES.seller}>SHOP</S.LinkItem>
+                        <S.LinkItem to={ROUTES.sellerDashboard}>SHOP</S.LinkItem>
                     </S.Item>
                     <S.SubWrapperList>
                         <S.SubItem>
-                            <S.NavLinkItem to={ROUTES.seller}>
+                            <S.NavLinkItem to={ROUTES.sellerDashboard}>
                                 {HeaderDashboardIcon()}
                                 <S.Span>Dashboard</S.Span>
                             </S.NavLinkItem>
@@ -51,10 +68,34 @@ export const Header = () => {
                         </S.SubItem>
                     </S.SubWrapperList>
                     <S.Item>
-                        <S.NavLinkItem to={ROUTES.sellerProfile}>
-                            {HeaderProfileIcon()}
-                            Profile
-                        </S.NavLinkItem>
+                        <Popover>
+                            <PopoverTrigger>
+                                <Button
+                                    display={'flex'}
+                                    flexDirection={'column'}
+                                    bgColor={'#ffffff'}
+                                >
+                                    {HeaderProfileIcon()}
+                                    Profile
+                                </Button>
+                            </PopoverTrigger>
+                            <Portal>
+                                <PopoverContent w={150}>
+                                    <S.NavLinkItem to={ROUTES.sellerProfile}>
+                                        <Text p={2}>Profile</Text>
+                                    </S.NavLinkItem>
+                                    <PopoverArrow />
+                                    <Button
+                                        onClick={handleLogout}
+                                        justifyContent={'start'}
+                                        color={'red'}
+                                    >
+                                        Logout
+                                    </Button>
+                                    <PopoverCloseButton />
+                                </PopoverContent>
+                            </Portal>
+                        </Popover>
                     </S.Item>
                 </S.WrapperList>
             </S.Container>

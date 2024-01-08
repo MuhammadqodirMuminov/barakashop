@@ -1,6 +1,7 @@
 import { AdsReducer } from '../ads/slice';
 import { AuthReducer } from '../auth/slice';
 import { CategoryReducer } from '../category/slices';
+import { OqimReducer } from '../oqim/slice';
 import { ProductReducer } from '../product/slice';
 import { PaymentReducer } from '../payment/slice';
 
@@ -10,5 +11,6 @@ export const reducer = {
     auth: AuthReducer,
     category: CategoryReducer,
     product: ProductReducer,
-    payment: PaymentReducer
+    payment: PaymentReducer,
+    oqim: OqimReducer,
 };

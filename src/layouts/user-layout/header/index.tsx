@@ -1,6 +1,6 @@
 import { HeaderBottom, HeaderTop } from '@/components';
 import { useTypedSelector } from '@/hooks';
-import { ICategoryState } from '@/store/category/interface';
+import { ICategory } from '@/types';
 import * as S from './styled';
 
 export const Header = () => {
@@ -8,8 +8,8 @@ export const Header = () => {
 
 	return (
 		<S.Header>
-			<HeaderTop nav={categories as ICategoryState[]} />
-			<HeaderBottom nav={categories as ICategoryState[]} />
+			<HeaderTop nav={categories as ICategory[]} />
+			<HeaderBottom nav={categories as ICategory[]} />
 		</S.Header>
 	);
 };
