@@ -1,25 +1,22 @@
 import { useActions } from '@/hooks';
-import { addNotification } from '@/utils';
 import { FC, PropsWithChildren, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Footer } from '../footer';
+import { Footer } from '../Footer';
 import { Header } from '../header';
 export const PageLayout: FC<PropsWithChildren> = () => {
-	const { getAllCategory } = useActions();
+    const { getAllCategory } = useActions();
 
-	useEffect(() => {
-		getAllCategory({
-			callback: () => {
-				addNotification('Successfully get ALl categories');
-			},
-		});
-	}, []);
+    useEffect(() => {
+        getAllCategory({
+            callback: () => {},
+        });
+    }, []);
 
-	return (
-		<>
-			<Header />
-			<Outlet />
-			<Footer />
-		</>
-	);
+    return (
+        <>
+            <Header />
+            <Outlet />
+            <Footer />
+        </>
+    );
 };

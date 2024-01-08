@@ -5,7 +5,7 @@ import { useActions, useTypedSelector } from '@/hooks';
 import { useEffect } from 'react';
 
 export const Home = () => {
-	const { getAllAds, getAllProduct, getRecomendedProduct, getFrequentlyProduct, getNewestProduct, getAllCategory } = useActions();
+	const { getAllAds, getAllProduct, getRecomendedProduct, getFrequentlyProduct, getNewestProduct, getAllCategory, getRecomendedCategory } = useActions();
 	const state = useTypedSelector(state => state);
 	const { recomendedProducts, frequentlyProducts, newestProducts } = state.product;
 	const { ads } = state.ads;
@@ -18,6 +18,7 @@ export const Home = () => {
 		getNewestProduct({});
 		getAllAds({});
 		getAllCategory({})
+		getRecomendedCategory({});
 	}, []);
 
 	return (

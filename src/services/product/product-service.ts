@@ -1,7 +1,12 @@
 import { $axios } from '../../config';
 import { EndPointes } from '../endpoints';
+import { IOnSaleProductQuery } from './types';
 
 export const ProductService = {
+    async getOne(id: string) {
+        const response = await $axios.get(EndPointes.product.getOne + id);
+        return response;
+    },
     async getAll() {
         const response = await $axios.get(EndPointes.product.getAll);
         return response;
@@ -18,8 +23,10 @@ export const ProductService = {
         const response = await $axios.get(EndPointes.product.getNewest);
         return response;
     },
-    async getOne(id: string) {
-        const response = await $axios.get(EndPointes.product.getOne + id);        
+    async getOnSale({ page, limit }: IOnSaleProductQuery) {
+        const response = await $axios.get(
+            `${EndPointes.product.getOnSale}?page=${page}&limit=${limit}`
+        );
         return response;
     },
 };

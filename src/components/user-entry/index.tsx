@@ -7,7 +7,7 @@ export const UserEntry = () => {
 		<S.UserEntry>
 			<img src={UserIcon} alt='user' />
 
-			<Link to={'/'}>
+			<Link to={'/sign-in'}>
 				<span>Login</span>
 			</Link>
 		</S.UserEntry>

@@ -29,6 +29,7 @@ export const WrapperList = styled.ul`
     grid-gap: 10px;
     gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-top: 30px;
     padding: 0 0 20px;
 `;
 

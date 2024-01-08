@@ -7,13 +7,12 @@ import {
     SafetyBeltIcon,
 } from '@/assets';
 import { NavItem } from '@/layouts/user-layout/header/types';
-import { ICategory } from '@/types';
 
 export const categories = [
     {
-        label: 'Non-original spare parts',
-        link: '/',
-        icon: (
+        id: 1,
+        title: 'Lorem',
+        categoty_image: (
             <img
                 src={EngineIcon}
                 alt=''
@@ -21,9 +20,9 @@ export const categories = [
         ),
     },
     {
-        label: 'Body parts',
-        link: '/',
-        icon: (
+        id: 2,
+        title: 'Lorem',
+        categoty_image: (
             <img
                 src={CarGarageIcon}
                 alt=''
@@ -31,9 +30,9 @@ export const categories = [
         ),
     },
     {
-        label: 'Spare parts',
-        link: '/',
-        icon: (
+        id: 3,
+        title: 'Lorem',
+        categoty_image: (
             <img
                 src={FrontDoorIcon}
                 alt=''
@@ -41,9 +40,9 @@ export const categories = [
         ),
     },
     {
-        label: 'Auto glass',
-        link: '/',
-        icon: (
+        id: 4,
+        title: 'Lorem',
+        categoty_image: (
             <img
                 src={SafetyBeltIcon}
                 alt=''
@@ -51,9 +50,9 @@ export const categories = [
         ),
     },
     {
-        label: 'Car oils',
-        link: '/',
-        icon: (
+        id: 5,
+        title: 'Lorem',
+        categoty_image: (
             <img
                 src={GlassWasherIcon}
                 alt=''
@@ -61,9 +60,59 @@ export const categories = [
         ),
     },
     {
-        label: 'Autochemistry',
-        link: '/',
-        icon: (
+        id: 6,
+        title: 'Lorem',
+        categoty_image: (
+            <img
+                src={CanisterIcon}
+                alt=''
+            />
+        ),
+    },
+    {
+        id: 7,
+        title: 'Lorem',
+        categoty_image: (
+            <img
+                src={CanisterIcon}
+                alt=''
+            />
+        ),
+    },
+    {
+        id: 9,
+        title: 'Lorem',
+        categoty_image: (
+            <img
+                src={CanisterIcon}
+                alt=''
+            />
+        ),
+    },
+    {
+        id: 10,
+        title: 'Lorem',
+        categoty_image: (
+            <img
+                src={CanisterIcon}
+                alt=''
+            />
+        ),
+    },
+    {
+        id: 11,
+        title: 'Lorem',
+        categoty_image: (
+            <img
+                src={CanisterIcon}
+                alt=''
+            />
+        ),
+    },
+    {
+        id: 12,
+        title: 'Lorem',
+        categoty_image: (
             <img
                 src={CanisterIcon}
                 alt=''
@@ -82,7 +131,7 @@ export const nav: NavItem[] = [
     { label: 'Contacts', link: '/' },
 ];
 
-export const tempCategories: ICategory[] = [
+export const tempCategories = [
     { id: 1, title: 'Category 1', categoty_image: '' },
     { id: 2, title: 'Category 2', categoty_image: '' },
     { id: 3, title: 'Category 3', categoty_image: '' },
