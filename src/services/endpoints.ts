@@ -20,17 +20,15 @@ export const EndPointes = {
         getAll: '/ads/get-all',
     },
     detail: {
-        getDetail: `/product/get-one/`
+        getDetail: `/product/get-one/`,
     },
     payment: {
         getAll: '/payment/get-all',
         getOne: '/payment/get-one',
-        create: "/payment/create"
+        create: '/payment/create',
     },
     profile: {
-        editPassword: "/user/update/password/"
-    }
-        getDetail: `/product/get-one/`,
+        editPassword: '/user/update/password/',
     },
     oqim: {
         getAll: '/oqim/get-all',
